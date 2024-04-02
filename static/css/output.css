@@ -622,48 +622,13 @@ video {
   top: 0px;
 }
 
-.left-0 {
-  left: 0px;
-}
-
-.right-0 {
-  right: 0px;
-}
-
-.-top-0 {
-  top: -0px;
-}
-
-.top-10 {
-  top: 2.5rem;
-}
-
-.right-10 {
-  right: 2.5rem;
-}
-
-.left-10 {
-  left: 2.5rem;
-}
-
-.left-5 {
-  left: 1.25rem;
-}
-
-.top-5 {
-  top: 1.25rem;
-}
-
 .z-\[1\] {
   z-index: 1;
 }
 
-.z-\[\] {
-  z-index: ;
-}
-
-.z-\[-1\] {
-  z-index: -1;
+.my-3 {
+  margin-top: 0.75rem;
+  margin-bottom: 0.75rem;
 }
 
 .my-5 {
@@ -671,9 +636,8 @@ video {
   margin-bottom: 1.25rem;
 }
 
-.my-3 {
-  margin-top: 0.75rem;
-  margin-bottom: 0.75rem;
+.mb-20 {
+  margin-bottom: 5rem;
 }
 
 .mb-5 {
@@ -686,26 +650,6 @@ video {
 
 .mt-48 {
   margin-top: 12rem;
-}
-
-.mt-4 {
-  margin-top: 1rem;
-}
-
-.mt-20 {
-  margin-top: 5rem;
-}
-
-.mt-16 {
-  margin-top: 4rem;
-}
-
-.mt-1 {
-  margin-top: 0.25rem;
-}
-
-.mt-5 {
-  margin-top: 1.25rem;
 }
 
 .block {
@@ -740,20 +684,12 @@ video {
   height: 100vh;
 }
 
-.h-56 {
-  height: 14rem;
-}
-
-.h-6 {
-  height: 1.5rem;
-}
-
-.h-64 {
-  height: 16rem;
-}
-
 .w-1\/2 {
   width: 50%;
+}
+
+.w-1\/3 {
+  width: 33.333333%;
 }
 
 .w-\[100px\] {
@@ -764,32 +700,8 @@ video {
   width: 100%;
 }
 
-.w-1\/3 {
-  width: 33.333333%;
-}
-
-.w-1\/4 {
-  width: 25%;
-}
-
-.w-1\/6 {
-  width: 16.666667%;
-}
-
-.w-1\/12 {
-  width: 8.333333%;
-}
-
-.w-1 {
-  width: 0.25rem;
-}
-
-.w-4\/5 {
-  width: 80%;
-}
-
-.w-2\/3 {
-  width: 66.666667%;
+.grow {
+  flex-grow: 1;
 }
 
 .-translate-x-1\/2 {
@@ -797,16 +709,8 @@ video {
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 
-.cursor-pointer {
-  cursor: pointer;
-}
-
 .grid-cols-3 {
   grid-template-columns: repeat(3, minmax(0, 1fr));
-}
-
-.grid-cols-2 {
-  grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 
 .flex-row-reverse {
@@ -815,10 +719,6 @@ video {
 
 .flex-col {
   flex-direction: column;
-}
-
-.flex-col-reverse {
-  flex-direction: column-reverse;
 }
 
 .items-center {
@@ -849,28 +749,12 @@ video {
   gap: 1.25rem;
 }
 
-.gap-20 {
-  gap: 5rem;
-}
-
-.gap-12 {
-  gap: 3rem;
-}
-
-.gap-1 {
-  gap: 0.25rem;
-}
-
-.gap-16 {
-  gap: 4rem;
-}
-
-.gap-14 {
-  gap: 3.5rem;
-}
-
 .self-start {
   align-self: flex-start;
+}
+
+.rounded-2xl {
+  border-radius: 1rem;
 }
 
 .rounded-full {
@@ -889,10 +773,6 @@ video {
   border-radius: 0.75rem;
 }
 
-.border-dashed {
-  border-style: dashed;
-}
-
 .bg-accent {
   --tw-bg-opacity: 1;
   background-color: rgb(184 255 190 / var(--tw-bg-opacity));
@@ -903,70 +783,23 @@ video {
   background-color: rgb(12 10 9 / var(--tw-bg-opacity));
 }
 
+.bg-main {
+  --tw-bg-opacity: 1;
+  background-color: rgb(81 139 86 / var(--tw-bg-opacity));
+}
+
+.bg-red-100 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(254 226 226 / var(--tw-bg-opacity));
+}
+
 .bg-white {
   --tw-bg-opacity: 1;
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
 }
 
-.bg-blue-200 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(191 219 254 / var(--tw-bg-opacity));
-}
-
-.bg-blue-100 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(219 234 254 / var(--tw-bg-opacity));
-}
-
-.bg-orange-100 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(255 237 213 / var(--tw-bg-opacity));
-}
-
-.bg-teal-100 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(204 251 241 / var(--tw-bg-opacity));
-}
-
-.bg-green-100 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(220 252 231 / var(--tw-bg-opacity));
-}
-
-.bg-purple-100 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(243 232 255 / var(--tw-bg-opacity));
-}
-
-.bg-purple-200 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(233 213 255 / var(--tw-bg-opacity));
-}
-
-.bg-gray-100 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(243 244 246 / var(--tw-bg-opacity));
-}
-
 .bg-opacity-70 {
   --tw-bg-opacity: 0.7;
-}
-
-.bg-opacity-30 {
-  --tw-bg-opacity: 0.3;
-}
-
-.bg-opacity-60 {
-  --tw-bg-opacity: 0.6;
-}
-
-.bg-opacity-80 {
-  --tw-bg-opacity: 0.8;
-}
-
-.object-contain {
-  -o-object-fit: contain;
-     object-fit: contain;
 }
 
 .object-cover {
@@ -988,10 +821,6 @@ video {
 
 .p-5 {
   padding: 1.25rem;
-}
-
-.p-8 {
-  padding: 2rem;
 }
 
 .p-6 {
@@ -1102,16 +931,6 @@ video {
   color: rgb(255 255 255 / var(--tw-text-opacity));
 }
 
-.text-purple-800 {
-  --tw-text-opacity: 1;
-  color: rgb(107 33 168 / var(--tw-text-opacity));
-}
-
-.text-gray-800 {
-  --tw-text-opacity: 1;
-  color: rgb(31 41 55 / var(--tw-text-opacity));
-}
-
 .opacity-45 {
   opacity: 0.45;
 }
@@ -1159,8 +978,53 @@ html{
 }
 
 .clip-path{
-  -webkit-clip-path: polygon(0 0,80% 0%,80% 20%, 100% 20%, 100% 100%, 0 100%);
-          clip-path: polygon(0 0,80% 0%,80% 20%, 100% 20%, 100% 100%, 0 100%);
+  -webkit-clip-path: polygon(0 0,20% 0%,20% 20%, 100% 100%, 100% 100%, 0 100%);
+          clip-path: polygon(0 0,20% 0%,20% 20%, 100% 100%, 100% 100%, 0 100%);
+}
+
+.footer {
+  background-size: cover;
+  background-position: center center;
+  background-repeat: repeat;
+  background-image: url("data:image/svg+xml;utf8,%3Csvg viewBox=%220 0 2000 1000%22 xmlns=%22http:%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cmask id=%22b%22 x=%220%22 y=%220%22 width=%222000%22 height=%221000%22%3E%3Cpath fill=%22url(%23a)%22 d=%22M0 0h2000v1000H0z%22%2F%3E%3C%2Fmask%3E%3Cpath fill=%22%23074f17%22 d=%22M0 0h2000v1000H0z%22%2F%3E%3Cg style=%22transform-origin:center center%22 stroke=%22%238df8c2%22 stroke-width=%222%22 mask=%22url(%23b)%22%3E%3Cpath fill=%22none%22 d=%22M0 0h100v100H0zM100 0h100v100H100z%22%2F%3E%3Cpath fill=%22%238df8c2f3%22 d=%22M200 0h100v100H200z%22%2F%3E%3Cpath fill=%22%238df8c251%22 d=%22M300 0h100v100H300z%22%2F%3E%3Cpath fill=%22none%22 d=%22M400 0h100v100H400zM500 0h100v100H500z%22%2F%3E%3Cpath fill=%22%238df8c283%22 d=%22M600 0h100v100H600z%22%2F%3E%3Cpath fill=%22none%22 d=%22M700 0h100v100H700zM800 0h100v100H800zM900 0h100v100H900z%22%2F%3E%3Cpath fill=%22%238df8c272%22 d=%22M1000 0h100v100h-100z%22%2F%3E%3Cpath fill=%22%238df8c21a%22 d=%22M1100 0h100v100h-100z%22%2F%3E%3Cpath fill=%22none%22 d=%22M1200 0h100v100h-100z%22%2F%3E%3Cpath fill=%22%238df8c2cc%22 d=%22M1300 0h100v100h-100z%22%2F%3E%3Cpath fill=%22%238df8c27e%22 d=%22M1400 0h100v100h-100z%22%2F%3E%3Cpath fill=%22%238df8c296%22 d=%22M1500 0h100v100h-100z%22%2F%3E%3Cpath fill=%22%238df8c2c9%22 d=%22M1600 0h100v100h-100z%22%2F%3E%3Cpath fill=%22%238df8c264%22 d=%22M1700 0h100v100h-100z%22%2F%3E%3Cpath fill=%22none%22 d=%22M1800 0h100v100h-100z%22%2F%3E%3Cpath fill=%22%238df8c2cd%22 d=%22M1900 0h100v100h-100z%22%2F%3E%3Cpath fill=%22none%22 d=%22M0 100h100v100H0z%22%2F%3E%3Cpath fill=%22%238df8c24c%22 d=%22M100 100h100v100H100z%22%2F%3E%3Cpath fill=%22none%22 d=%22M200 100h100v100H200z%22%2F%3E%3Cpath fill=%22%238df8c2fe%22 d=%22M300 100h100v100H300z%22%2F%3E%3Cpath fill=%22none%22 d=%22M400 100h100v100H400z%22%2F%3E%3Cpath fill=%22%238df8c213%22 d=%22M500 100h100v100H500z%22%2F%3E%3Cpath fill=%22none%22 d=%22M600 100h100v100H600z%22%2F%3E%3Cpath fill=%22%238df8c2d8%22 d=%22M700 100h100v100H700z%22%2F%3E%3Cpath fill=%22none%22 d=%22M800 100h100v100H800zM900 100h100v100H900zM1000 100h100v100h-100zM1100 100h100v100h-100zM1200 100h100v100h-100zM1300 100h100v100h-100z%22%2F%3E%3Cpath fill=%22%238df8c2d7%22 d=%22M1400 100h100v100h-100z%22%2F%3E%3Cpath fill=%22%238df8c2c4%22 d=%22M1500 100h100v100h-100z%22%2F%3E%3Cpath fill=%22none%22 d=%22M1600 100h100v100h-100z%22%2F%3E%3Cpath fill=%22%238df8c287%22 d=%22M1700 100h100v100h-100z%22%2F%3E%3Cpath fill=%22none%22 d=%22M1800 100h100v100h-100zM1900 100h100v100h-100z%22%2F%3E%3Cpath fill=%22%238df8c2db%22 d=%22M0 200h100v100H0z%22%2F%3E%3Cpath fill=%22none%22 d=%22M100 200h100v100H100zM200 200h100v100H200zM300 200h100v100H300zM400 200h100v100H400z%22%2F%3E%3Cpath fill=%22%238df8c227%22 d=%22M500 200h100v100H500z%22%2F%3E%3Cpath fill=%22none%22 d=%22M600 200h100v100H600zM700 200h100v100H700zM800 200h100v100H800zM900 200h100v100H900zM1000 200h100v100h-100zM1100 200h100v100h-100z%22%2F%3E%3Cpath fill=%22%238df8c2b1%22 d=%22M1200 200h100v100h-100z%22%2F%3E%3Cpath fill=%22%238df8c22b%22 d=%22M1300 200h100v100h-100z%22%2F%3E%3Cpath fill=%22none%22 d=%22M1400 200h100v100h-100zM1500 200h100v100h-100z%22%2F%3E%3Cpath fill=%22%238df8c2c4%22 d=%22M1600 200h100v100h-100z%22%2F%3E%3Cpath fill=%22none%22 d=%22M1700 200h100v100h-100z%22%2F%3E%3Cpath fill=%22%238df8c211%22 d=%22M1800 200h100v100h-100z%22%2F%3E%3Cpath fill=%22none%22 d=%22M1900 200h100v100h-100zM0 300h100v100H0zM100 300h100v100H100zM200 300h100v100H200z%22%2F%3E%3Cpath fill=%22%238df8c2c7%22 d=%22M300 300h100v100H300z%22%2F%3E%3Cpath fill=%22none%22 d=%22M400 300h100v100H400z%22%2F%3E%3Cpath fill=%22%238df8c294%22 d=%22M500 300h100v100H500z%22%2F%3E%3Cpath fill=%22%238df8c2a6%22 d=%22M600 300h100v100H600z%22%2F%3E%3Cpath fill=%22%238df8c201%22 d=%22M700 300h100v100H700z%22%2F%3E%3Cpath fill=%22none%22 d=%22M800 300h100v100H800zM900 300h100v100H900z%22%2F%3E%3Cpath fill=%22%238df8c22f%22 d=%22M1000 300h100v100h-100z%22%2F%3E%3Cpath fill=%22none%22 d=%22M1100 300h100v100h-100zM1200 300h100v100h-100zM1300 300h100v100h-100zM1400 300h100v100h-100z%22%2F%3E%3Cpath fill=%22%238df8c2d7%22 d=%22M1500 300h100v100h-100z%22%2F%3E%3Cpath fill=%22none%22 d=%22M1600 300h100v100h-100z%22%2F%3E%3Cpath fill=%22%238df8c298%22 d=%22M1700 300h100v100h-100z%22%2F%3E%3Cpath fill=%22none%22 d=%22M1800 300h100v100h-100zM1900 300h100v100h-100zM0 400h100v100H0zM100 400h100v100H100z%22%2F%3E%3Cpath fill=%22%238df8c2c8%22 d=%22M200 400h100v100H200z%22%2F%3E%3Cpath fill=%22none%22 d=%22M300 400h100v100H300zM400 400h100v100H400zM500 400h100v100H500z%22%2F%3E%3Cpath fill=%22%238df8c27c%22 d=%22M600 400h100v100H600z%22%2F%3E%3Cpath fill=%22none%22 d=%22M700 400h100v100H700zM800 400h100v100H800zM900 400h100v100H900z%22%2F%3E%3Cpath fill=%22%238df8c2ad%22 d=%22M1000 400h100v100h-100z%22%2F%3E%3Cpath fill=%22none%22 d=%22M1100 400h100v100h-100zM1200 400h100v100h-100zM1300 400h100v100h-100z%22%2F%3E%3Cpath fill=%22%238df8c26a%22 d=%22M1400 400h100v100h-100z%22%2F%3E%3Cpath fill=%22none%22 d=%22M1500 400h100v100h-100zM1600 400h100v100h-100zM1700 400h100v100h-100z%22%2F%3E%3Cpath fill=%22%238df8c212%22 d=%22M1800 400h100v100h-100z%22%2F%3E%3Cpath fill=%22none%22 d=%22M1900 400h100v100h-100zM0 500h100v100H0zM100 500h100v100H100zM200 500h100v100H200zM300 500h100v100H300z%22%2F%3E%3Cpath fill=%22%238df8c2b6%22 d=%22M400 500h100v100H400z%22%2F%3E%3Cpath fill=%22%238df8c231%22 d=%22M500 500h100v100H500z%22%2F%3E%3Cpath fill=%22none%22 d=%22M600 500h100v100H600z%22%2F%3E%3Cpath fill=%22%238df8c2b1%22 d=%22M700 500h100v100H700z%22%2F%3E%3Cpath fill=%22none%22 d=%22M800 500h100v100H800z%22%2F%3E%3Cpath fill=%22%238df8c2ad%22 d=%22M900 500h100v100H900z%22%2F%3E%3Cpath fill=%22none%22 d=%22M1000 500h100v100h-100zM1100 500h100v100h-100zM1200 500h100v100h-100zM1300 500h100v100h-100zM1400 500h100v100h-100zM1500 500h100v100h-100zM1600 500h100v100h-100zM1700 500h100v100h-100zM1800 500h100v100h-100zM1900 500h100v100h-100z%22%2F%3E%3Cpath fill=%22%238df8c2df%22 d=%22M0 600h100v100H0z%22%2F%3E%3Cpath fill=%22none%22 d=%22M100 600h100v100H100zM200 600h100v100H200zM300 600h100v100H300zM400 600h100v100H400zM500 600h100v100H500zM600 600h100v100H600zM700 600h100v100H700z%22%2F%3E%3Cpath fill=%22%238df8c23e%22 d=%22M800 600h100v100H800z%22%2F%3E%3Cpath fill=%22none%22 d=%22M900 600h100v100H900zM1000 600h100v100h-100zM1100 600h100v100h-100z%22%2F%3E%3Cpath fill=%22%238df8c29c%22 d=%22M1200 600h100v100h-100z%22%2F%3E%3Cpath fill=%22none%22 d=%22M1300 600h100v100h-100z%22%2F%3E%3Cpath fill=%22%238df8c208%22 d=%22M1400 600h100v100h-100z%22%2F%3E%3Cpath fill=%22none%22 d=%22M1500 600h100v100h-100zM1600 600h100v100h-100zM1700 600h100v100h-100zM1800 600h100v100h-100zM1900 600h100v100h-100zM0 700h100v100H0zM100 700h100v100H100zM200 700h100v100H200z%22%2F%3E%3Cpath fill=%22%238df8c27c%22 d=%22M300 700h100v100H300z%22%2F%3E%3Cpath fill=%22none%22 d=%22M400 700h100v100H400zM500 700h100v100H500zM600 700h100v100H600zM700 700h100v100H700zM800 700h100v100H800zM900 700h100v100H900z%22%2F%3E%3Cpath fill=%22%238df8c249%22 d=%22M1000 700h100v100h-100z%22%2F%3E%3Cpath fill=%22none%22 d=%22M1100 700h100v100h-100zM1200 700h100v100h-100z%22%2F%3E%3Cpath fill=%22%238df8c222%22 d=%22M1300 700h100v100h-100z%22%2F%3E%3Cpath fill=%22none%22 d=%22M1400 700h100v100h-100zM1500 700h100v100h-100zM1600 700h100v100h-100zM1700 700h100v100h-100zM1800 700h100v100h-100zM1900 700h100v100h-100zM0 800h100v100H0z%22%2F%3E%3Cpath fill=%22%238df8c2b1%22 d=%22M100 800h100v100H100z%22%2F%3E%3Cpath fill=%22none%22 d=%22M200 800h100v100H200z%22%2F%3E%3Cpath fill=%22%238df8c295%22 d=%22M300 800h100v100H300z%22%2F%3E%3Cpath fill=%22none%22 d=%22M400 800h100v100H400zM500 800h100v100H500z%22%2F%3E%3Cpath fill=%22%238df8c231%22 d=%22M600 800h100v100H600z%22%2F%3E%3Cpath fill=%22none%22 d=%22M700 800h100v100H700zM800 800h100v100H800zM900 800h100v100H900z%22%2F%3E%3Cpath fill=%22%238df8c2fd%22 d=%22M1000 800h100v100h-100z%22%2F%3E%3Cpath fill=%22none%22 d=%22M1100 800h100v100h-100zM1200 800h100v100h-100z%22%2F%3E%3Cpath fill=%22%238df8c26e%22 d=%22M1300 800h100v100h-100z%22%2F%3E%3Cpath fill=%22%238df8c291%22 d=%22M1400 800h100v100h-100z%22%2F%3E%3Cpath fill=%22%238df8c221%22 d=%22M1500 800h100v100h-100z%22%2F%3E%3Cpath fill=%22none%22 d=%22M1600 800h100v100h-100zM1700 800h100v100h-100z%22%2F%3E%3Cpath fill=%22%238df8c2b7%22 d=%22M1800 800h100v100h-100z%22%2F%3E%3Cpath fill=%22none%22 d=%22M1900 800h100v100h-100zM0 900h100v100H0z%22%2F%3E%3Cpath fill=%22%238df8c2b4%22 d=%22M100 900h100v100H100z%22%2F%3E%3Cpath fill=%22none%22 d=%22M200 900h100v100H200z%22%2F%3E%3Cpath fill=%22%238df8c27f%22 d=%22M300 900h100v100H300z%22%2F%3E%3Cpath fill=%22%238df8c240%22 d=%22M400 900h100v100H400z%22%2F%3E%3Cpath fill=%22none%22 d=%22M500 900h100v100H500zM600 900h100v100H600zM700 900h100v100H700zM800 900h100v100H800zM900 900h100v100H900z%22%2F%3E%3Cpath fill=%22%238df8c264%22 d=%22M1000 900h100v100h-100z%22%2F%3E%3Cpath fill=%22%238df8c25d%22 d=%22M1100 900h100v100h-100z%22%2F%3E%3Cpath fill=%22none%22 d=%22M1200 900h100v100h-100zM1300 900h100v100h-100zM1400 900h100v100h-100zM1500 900h100v100h-100zM1600 900h100v100h-100zM1700 900h100v100h-100z%22%2F%3E%3Cpath fill=%22%238df8c2c9%22 d=%22M1800 900h100v100h-100z%22%2F%3E%3Cpath fill=%22%238df8c243%22 d=%22M1900 900h100v100h-100z%22%2F%3E%3C%2Fg%3E%3Cdefs%3E%3CradialGradient id=%22a%22%3E%3Cstop offset=%220%22 stop-color=%22%23fff%22%2F%3E%3Cstop offset=%221%22 stop-color=%22%23fff%22 stop-opacity=%220%22%2F%3E%3C%2FradialGradient%3E%3C%2Fdefs%3E%3C%2Fsvg%3E");
+}
+
+.embla {
+  overflow: hidden;
+}
+
+.embla__container {
+  display: flex;
+}
+
+.embla__slide {
+  flex: 0 0 40%;
+  min-width: 0;
+}
+
+.chart {
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center center;
+  background-repeat: repeat;
+  background-image: url("data:image/svg+xml;utf8,%3Csvg height=%22auto%22 viewBox=%220 0 2000 1400%22 xmlns=%22http:%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath d=%22M0 1386.705c20-7.882 85-35.38 125-49.258s85-23.15 125-37.482 85-33.85 125-52.095c40-18.244 85-18.002 125-61.935 40-43.933 85-198.424 125-212.648 40-14.224 85 148.465 125 123.747 40-24.717 85-246.748 125-278.232 40-31.484 85 109.024 125 81.457 40-27.568 85-236.21 125-253.753 40-17.542 85 118.072 125 144.115 40 26.043 85 83.096 125 18.654 40-64.442 85-423.921 125-421.416 40 2.505 85 415.92 125 437.073 40 21.153 85-225.86 125-304.87 40-79.01 85-151.392 125-188.94 40-37.55 105-38.422 125-45.74V1400H0Z%22 fill=%22%2345f7731a%22%2F%3E%3Cpath d=%22M0 1386.705c20-7.882 85-35.38 125-49.258s85-23.15 125-37.482 85-33.85 125-52.095c40-18.244 85-18.002 125-61.935 40-43.933 85-198.424 125-212.648 40-14.224 85 148.465 125 123.747 40-24.717 85-246.748 125-278.232 40-31.484 85 109.024 125 81.457 40-27.568 85-236.21 125-253.753 40-17.542 85 118.072 125 144.115 40 26.043 85 83.096 125 18.654 40-64.442 85-423.921 125-421.416 40 2.505 85 415.92 125 437.073 40 21.153 85-225.86 125-304.87 40-79.01 85-151.392 125-188.94 40-37.55 105-38.422 125-45.74%22 fill=%22none%22 stroke=%22%2345f773%22 stroke-width=%226%22%2F%3E%3Cg fill=%22%2345f773%22%3E%3Ccircle cy=%221386.705%22 r=%2212%22%2F%3E%3Ccircle cx=%22125%22 cy=%221337.447%22 r=%2212%22%2F%3E%3Ccircle cx=%22250%22 cy=%221299.965%22 r=%2212%22%2F%3E%3Ccircle cx=%22375%22 cy=%221247.87%22 r=%2212%22%2F%3E%3Ccircle cx=%22500%22 cy=%221185.935%22 r=%2212%22%2F%3E%3Ccircle cx=%22625%22 cy=%22973.287%22 r=%2212%22%2F%3E%3Ccircle cx=%22750%22 cy=%221097.034%22 r=%2212%22%2F%3E%3Ccircle cx=%22875%22 cy=%22818.802%22 r=%2212%22%2F%3E%3Ccircle cx=%221000%22 cy=%22900.259%22 r=%2212%22%2F%3E%3Ccircle cx=%221125%22 cy=%22646.506%22 r=%2212%22%2F%3E%3Ccircle cx=%221250%22 cy=%22790.621%22 r=%2212%22%2F%3E%3Ccircle cx=%221375%22 cy=%22809.275%22 r=%2212%22%2F%3E%3Ccircle cx=%221500%22 cy=%22387.859%22 r=%2212%22%2F%3E%3Ccircle cx=%221625%22 cy=%22824.932%22 r=%2212%22%2F%3E%3Ccircle cx=%221750%22 cy=%22520.061%22 r=%2212%22%2F%3E%3Ccircle cx=%221875%22 cy=%22331.122%22 r=%2212%22%2F%3E%3Ccircle cx=%222000%22 cy=%22285.381%22 r=%2212%22%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E");
+}
+
+.\*\:h-10 > * {
+  height: 2.5rem;
+}
+
+.\*\:w-10 > * {
+  width: 2.5rem;
+}
+
+.\*\:cursor-pointer > * {
+  cursor: pointer;
+}
+
+.\*\:rounded-full > * {
+  border-radius: 9999px;
 }
 
 .hover\:text-main:hover {
@@ -1169,28 +1033,20 @@ html{
 }
 
 @media not all and (min-width: 1060px) {
-  .max-md\:-bottom-10 {
-    bottom: -2.5rem;
-  }
-
   .max-md\:-top-1 {
     top: -0.25rem;
-  }
-
-  .max-md\:right-10 {
-    right: 2.5rem;
   }
 
   .max-md\:mt-20 {
     margin-top: 5rem;
   }
 
-  .max-md\:hidden {
-    display: none;
+  .max-md\:flex {
+    display: flex;
   }
 
-  .max-md\:h-\[100px\] {
-    height: 100px;
+  .max-md\:hidden {
+    display: none;
   }
 
   .max-md\:h-\[50px\] {
@@ -1209,16 +1065,16 @@ html{
     width: 80%;
   }
 
-  .max-md\:w-\[100px\] {
-    width: 100px;
-  }
-
   .max-md\:w-\[50px\] {
     width: 50px;
   }
 
   .max-md\:w-full {
     width: 100%;
+  }
+
+  .max-md\:flex-\[0_0_90\%\] {
+    flex: 0 0 90%;
   }
 
   .max-md\:grid-cols-1 {
@@ -1229,17 +1085,8 @@ html{
     flex-direction: column;
   }
 
-  .max-md\:gap-14 {
-    gap: 3.5rem;
-  }
-
-  .max-md\:rounded-full {
-    border-radius: 9999px;
-  }
-
-  .max-md\:border-accent {
-    --tw-border-opacity: 1;
-    border-color: rgb(184 255 190 / var(--tw-border-opacity));
+  .max-md\:items-center {
+    align-items: center;
   }
 
   .max-md\:p-4 {
@@ -1257,6 +1104,10 @@ html{
 
   .max-md\:pt-20 {
     padding-top: 5rem;
+  }
+
+  .max-md\:text-center {
+    text-align: center;
   }
 
   .max-md\:text-4xl {
@@ -1280,22 +1131,6 @@ html{
 }
 
 @media (min-width: 1200px) {
-  .lg\:-top-10 {
-    top: -2.5rem;
-  }
-
-  .lg\:right-10 {
-    right: 2.5rem;
-  }
-
-  .lg\:-right-10 {
-    right: -2.5rem;
-  }
-
-  .lg\:-left-10 {
-    left: -2.5rem;
-  }
-
   .lg\:mt-36 {
     margin-top: 9rem;
   }
