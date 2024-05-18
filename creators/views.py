@@ -5,4 +5,4 @@ from django.shortcuts import render
 
 
 def UserDashboard(request):
-    return render(request,'bases/dashboardbase.html')
+    return render(request,'pages/dashboard/dashboard.html')

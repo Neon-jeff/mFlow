@@ -2,6 +2,7 @@
 
 module.exports = {
   content: ["./frontend/**/*.html", "./static/js/*.js"],
+  darkMode: "selector",
   theme: {
     extend: {
       dropShadow: {

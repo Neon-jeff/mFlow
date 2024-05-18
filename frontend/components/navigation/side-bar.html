@@ -1,47 +1,57 @@
-<section class="bg-[rgb(0,0,0,.8)] h-screen w-screen fixed top-0 left-0 ">
-    <!-- sidenav elems container -->
-    <div class="bg-white max-md:w-4/5 w-1/5 h-screen p-10 relative">
+<section
+  class="bg-[rgb(0,0,0,.8)] h-screen w-screen fixed top-0 left-0 z-[1]"
+  x-show="drawerOpen"
+  x-cloak
+  @click="drawerOpen=!drawerOpen"
+>
+  <!-- sidenav elems container -->
+  <div
+    class="bg-white dark:bg-neutral-900 *:dark:text-gray-300 max-md:w-4/5 w-1/5 h-screen p-10 relative"
+    x-show="drawerOpen"
+    x-transition:enter="transition duration-1000"
+    x-transition:enter-start="transform -translate-x-full"
+    x-transition:enter-end="transform translate-x-0"
+    x-transition:leave="transition duration-500"
+    x-transition:leave-start="transform"
+    x-transition:leave-end="transform -translate-x-full"
+  >
+    <!-- profile card -->
+    <div class="flex flex-col">
+      <span class="flex gap-2 items-center text-xl font-semibold">
+        <ion-icon name="person-circle" class="text-6xl text-main"></ion-icon>
+        <span class="flex flex-col">
+          Neon Koke
+          <span class="text-gray-600 text-xs font-normal">Starter Plan</span>
+        </span>
+      </span>
 
-        <!-- profile card -->
-        <div class="flex flex-col ">
-            <span class="flex  gap-2 items-center text-xl font-semibold ">
-                <ion-icon name="person-circle" class="text-6xl text-main"></ion-icon>
-               <span class="flex flex-col">
-                 Neon Koke
-                <span class="text-gray-600 text-xs font-normal">Starter Plan</span>
-               </span>
-            </span>
-
-
-            <button class="bg-accent text-dark rounded-full flex justify-center items-center gap-2 p-5 mt-4">
-                <ion-icon name="diamond" class="text-xl "></ion-icon>
-                Upgrade to pro</button>
-        </div>
-
-        <!-- main nav element -->
-        <div class="flex flex-col gap-3 mt-10">
-            <span class="text-gray-400">Menu</span>
-            <a href="">Overview</a>
-            <a href="">My Products</a>
-            <a href="">Sales Earning</a>
-
-
-        </div>
-<!-- settings -->
-        <div class="flex flex-col gap-3 mt-10">
-            <span class="text-gray-400">Settings</span>
-            <a href="">My Account</a>
-            <a href="">Security</a>
-             <a href="">My Subscription</a>
-<!-- logout -->
-        </div>
-
-                <div class="absolute bottom-5 flex flex-col gap-4">
-                    <a href="">Need Support? </a>
-            <a href="">Logout</a>
-
-
-        </div>
+      <button
+        class="bg-accent text-dark rounded-full flex justify-center items-center gap-2 p-5 mt-4"
+      >
+        <ion-icon name="diamond" class="text-xl"></ion-icon>
+        Upgrade to pro
+      </button>
     </div>
 
+    <!-- main nav element -->
+    <div class="flex flex-col gap-3 mt-10">
+      <span class="text-gray-400">Menu</span>
+      <a href="">Overview</a>
+      <a href="">My Products</a>
+      <a href="">Sales Earning</a>
+    </div>
+    <!-- settings -->
+    <div class="flex flex-col gap-3 mt-10">
+      <span class="text-gray-400">Settings</span>
+      <a href="">My Account</a>
+      <a href="">Security</a>
+      <a href="">My Subscription</a>
+      <!-- logout -->
+    </div>
+
+    <div class="absolute bottom-10 flex flex-col gap-4">
+      <a href="">Need Support? </a>
+      <a href="">Logout</a>
+    </div>
+  </div>
 </section>
