@@ -4,9 +4,9 @@ from django.shortcuts import render
 
 
 def RegisterView(request):
-    pass
+    return render(request,'pages/register.html')
 
 
 def LoginView(request):
     return render(request,'pages/login.html')
-    pass
+ 

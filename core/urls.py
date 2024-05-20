@@ -24,7 +24,8 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('',TemplateView.as_view(template_name='pages/home.html'),name='home'),
     path('auth/',include('authentication.urls')),
-    path('dashboard',include('creators.urls'))
+    path('dashboard',include('creators.urls')),
+    path('affiliate-network/',TemplateView.as_view(template_name='pages/affiliate-network.html'),name='affiliate'),
 ]
 
 urlpatterns += static(settings.MEDIA_URL,document_root=settings.MEDIA_ROOT)
