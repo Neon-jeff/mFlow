@@ -1,10 +1,10 @@
 {% extends "bases/base.html" %} {% block content %}
 
-<section class="min-h-screen px-10 text-sm font-normal my-36">
+<section class="min-h-screen px-10 max-md:px-2 text-sm font-normal my-36">
   <!-- hero -->
   <div class="mx-auto text-center flex flex-col items-center gap-5">
     <p class="text-main">Earn money from anywhere</p>
-    <h1 class="text-5xl font-semibold">Social Marketing</h1>
+    <h1 class="text-5xl max-md:text-3xl font-semibold">Social Marketing</h1>
     <p class="w-1/2 max-md:w-full">
       Lorem ipsum dolor sit amet consectetur adipisicing elit. A, nam similique
       modi et veniam ipsum aut repudiandae accusamus voluptate facere!
@@ -25,7 +25,7 @@
   </div>
   <!-- how it works -->
   <div
-    class="text-center flex flex-col items-center gap-8 mt-20 text-sm bg-accent p-20 rounded-md h-1/2"
+    class="text-center flex flex-col items-center gap-8 mt-20 text-sm bg-gray-50 p-20 max-md:p-5 rounded-md h-1/2"
   >
     <div>
       <h1 class="text-3xl font-semibold text-center">How it Works</h1>
@@ -59,7 +59,7 @@
     </div>
     <a
       href="{%url 'register'%}"
-      class="p-5 rounded-full bg-black w-1/2 max-md:w-full self-center mt-5 hover:scale-95 transition duration-100 ease-out  text-white block"
+      class="p-5 rounded-full bg-main w-1/2 max-md:w-full self-center mt-5 hover:scale-95 transition duration-100 ease-out text-white block"
       >Register to Start Earning</a
     >
   </div>
