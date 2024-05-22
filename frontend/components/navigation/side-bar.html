@@ -6,7 +6,7 @@
 >
   <!-- sidenav elems container -->
   <div
-    class="bg-white dark:bg-neutral-900 *:dark:text-gray-300 max-md:w-4/5 w-1/5 h-screen p-10 relative"
+    class="bg-white dark:bg-neutral-900 *:dark:text-gray-300 max-md:w-4/5 w-1/5 h-screen px-10 pt-5 relative"
     x-show="drawerOpen"
     x-transition:enter="transition duration-1000"
     x-transition:enter-start="transform -translate-x-full"
@@ -16,7 +16,7 @@
     x-transition:leave-end="transform -translate-x-full"
   >
     <!-- profile card -->
-    <div class="flex flex-col">
+    <!-- <div class="flex flex-col">
       <span class="flex gap-2 items-center text-xl font-semibold">
         <ion-icon name="person-circle" class="text-6xl text-main"></ion-icon>
         <span class="flex flex-col">
@@ -31,7 +31,7 @@
         <ion-icon name="diamond" class="text-xl"></ion-icon>
         Upgrade to pro
       </button>
-    </div>
+    </div> -->
 
     <!-- main nav element -->
     <div class="flex flex-col gap-3 mt-10">
@@ -49,9 +49,39 @@
       <!-- logout -->
     </div>
 
-    <div class="absolute bottom-10 flex flex-col gap-4">
+    <!-- theme -->
+    <div class="flex flex-col gap-3 mt-10">
+      <span class="text-gray-400">Theme</span>
+      <span
+        class="flex text-xs text-lime-500 w-fit border-accent cursor-pointer toggle-theme items-center gap-2 rounded-md p-1 px-4 border"
+      >
+        <ion-icon
+          name="sunny"
+          class="dark:text-accent text-lime-500 text-xl p-1 rounded-full cursor-pointer toggle-theme"
+        ></ion-icon>
+        <p>Light Mode</p>
+      </span>
+    </div>
+
+    <!-- logout -->
+    <div class="mt-10 flex flex-col gap-2">
       <a href="">Need Support? </a>
       <a href="">Logout</a>
     </div>
   </div>
+
+  <script>
+    let toggleTheme = document.querySelector(".toggle-theme");
+    toggleTheme.addEventListener("click", () => {
+      if (document.documentElement.classList.contains("dark")) {
+        document.documentElement.classList.toggle("dark");
+        toggleTheme.children[0].setAttribute("name", "sunny");
+        toggleTheme.children[1].textContent = "Light Mode";
+      } else {
+        document.documentElement.classList.toggle("dark");
+        toggleTheme.children[0].setAttribute("name", "moon");
+        toggleTheme.children[1].textContent = "Dark Mode";
+      }
+    });
+  </script>
 </section>
