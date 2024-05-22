@@ -25,6 +25,7 @@ urlpatterns = [
     path('',TemplateView.as_view(template_name='pages/home.html'),name='home'),
     path('auth/',include('authentication.urls')),
     path('dashboard',include('creators.urls')),
+    path('products/',include('products.urls')),
     path('affiliate-network/',TemplateView.as_view(template_name='pages/affiliate-network.html'),name='affiliate'),
 ]
 

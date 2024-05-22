@@ -44,7 +44,8 @@ INSTALLED_APPS = [
     'whitenoise.runserver_nostatic',
     'compressor',
     'authentication',
-    'creators'
+    'creators',
+    'products'
 ]
 
 MIDDLEWARE = [
