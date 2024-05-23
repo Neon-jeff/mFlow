@@ -1,5 +1,5 @@
 <nav
-  class="flex justify-between bg-white dark:bg-dark fixed w-full px-10 font-normal text-sm max-md:px-5 z-[1] left-1/2 top-0 py-5 -translate-x-1/2 text-dark dark:border-b-[1px] dark:border-neutral-800 backdrop-blur-lg backdrop-filter bg-opacity-70 "
+  class="flex justify-between bg-white dark:bg-dark fixed w-full px-10 font-normal text-sm max-md:px-5 z-[1] left-1/2 top-0 py-5 -translate-x-1/2 text-dark dark:border-b-[1px] dark:border-neutral-800 backdrop-blur-lg backdrop-filter bg-opacity-70"
 >
   {%include 'components/navigation/side-bar.html'%}
   <a href="" class="hidden"> {%include 'components/logo/logo.html'%} </a>
@@ -7,7 +7,7 @@
   <ion-icon
     name="menu-outline"
     class="text-3xl dark:text-gray-300 cursor-pointer translate-y-3 max-md:translate-y-2"
-    @click="drawerOpen=!drawerOpen" 
+    @click="drawerOpen=!drawerOpen"
   ></ion-icon>
   <!-- profile state toggler -->
   <div class="fixed right-10 flex items-center gap-5">
@@ -17,7 +17,7 @@
         class="flex bg-gray-100 dark:bg-neutral-900 dark:text-gray-300 text-gray-600 p-3 max-sm:p-3 rounded-full items-center gap-2 justify-center cursor-pointer"
         @click="profileOptionsOpen=!profileOptionsOpen"
       >
-        <span class="font-medium"> Creator Mode </span>
+        <span class="font-medium"> Vendor Mode </span>
         <ion-icon name="chevron-down"></ion-icon>
       </div>
 
@@ -35,7 +35,6 @@
         x-transition:leave-end="transform  -translate-y-10 opacity-0 static"
       >
         <span>Vendor Mode</span>
-        <span>Customer Mode</span>
         <span>Affiliate Mode</span>
       </div>
     </ul>

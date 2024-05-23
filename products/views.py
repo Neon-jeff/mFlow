@@ -4,3 +4,6 @@ from django.shortcuts import render
 
 def UserProductsListView(request):
     return render(request,'pages/dashboard/products.html')
+
+def SingleProductLink(request):
+    return render(request,'pages/product-page.html')
