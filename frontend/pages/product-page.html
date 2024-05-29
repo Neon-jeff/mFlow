@@ -1,15 +1,39 @@
-<section>
-  <div>
+{%extends 'bases/base.html'%} {%block content%}
+<section class="py-40 px-10 max-sm:px-4">
+  <div
+    class="flex max-sm:flex-col max-sm:gap-5 justify-center items-center gap-10"
+  >
     <img
       src="https://images.pexels.com/photos/8101532/pexels-photo-8101532.jpeg?auto=compress&cs=tinysrgb&w=600"
-      alt=""
+      alt="product_link_image"
+      class="w-1/2 max-sm:w-full max-sm:h-72 h-96 object-cover rounded-xl"
     />
     <!-- product details -->
-    <div>
-      <p>Product Name</p>
-      <p>Location</p>
-      <p>Price</p>
-      <p>20 In-Stock</p>
+    <div class="w-1/2 max-sm:w-full">
+      <p class="text-neutral-600">jewelry</p>
+      <p class="text-2xl font-semibold py-1 pb-3">L'Shien Ruby Pendant</p>
+      <p class="font-bold text-xl">$300</p>
+      <div class="border border-dark p-3 mt-3 rounded-md">
+        <p class="font-medium text-lg text-neutral-700">Description</p>
+        <p class="text-sm">
+          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Accusamus
+          odit inventore amet cupiditate voluptas voluptates exercitationem
+          aperiam facere doloremque nobis.
+        </p>
+      </div>
+      <div class="flex gap-5">
+        <button
+          class="border-dark border  p-4  text- px-6 mt-5 rounded-full"
+        >
+          Contact Seller
+        </button>
+        <button
+          class="bg-dark text-white p-4 font-light text-sm px-6 mt-5 rounded-full"
+        >
+          Contact Seller
+        </button>
+      </div>
     </div>
   </div>
 </section>
+{%endblock%}

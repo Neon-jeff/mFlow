@@ -6,5 +6,7 @@ document.addEventListener("alpine:init", () => {
     user_products: [],
     setEditProductItem() {},
     showEditProductModal: false,
+    showEditWalletModal: false,
+    showRequestPaymentModal: false,
   }));
 });

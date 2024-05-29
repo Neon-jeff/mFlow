@@ -1,6 +1,6 @@
-{%extends 'bases/dashboardbase.html'%} {%load static%} {%block content%}
-{%include 'components/dashboard/affiliate-dashboard.html'%}
-<section class="mt-20 p-10 px-10 max-md:px-5 dark:bg-dark" x-show="false">
+{%load static%}
+<section class="mt-20 p-10 px-10 max-md:px-5 dark:bg-dark" x-show="true">
+
   <!-- balance card -->
   <div class="flex gap-10">
     <div class="w-full">
@@ -34,7 +34,7 @@
 
       <!-- the main grid of three items -->
       <div
-        class="grid grid-cols-3 max-md:grid-cols-2 mt-5 relative max-md:gap-5 gap-10 *:dark:text-gray-300 *:dark:border-none *:dark:bg-neutral-900"
+        class="grid grid-cols-2 max-md:grid-cols-2 mt-5 relative max-md:gap-5 gap-10 *:dark:text-gray-300 *:dark:border-none *:dark:bg-neutral-900"
       >
         <!-- sales -->
         <span
@@ -43,7 +43,7 @@
           <span
             class="text-xs max-sm:text-[.9rem] max-md:text-lg max-md:w-full rounded-lg font-normal"
           >
-            Sales Revenue
+           Affiliate Balance
           </span>
           <span class="dark:text-lime-500">N300,000.00</span>
           <span class="text-xs font-semibold dark:text-gray-300 text-main"
@@ -52,19 +52,7 @@
         </span>
 
         <!-- performance -->
-        <span
-          class="text-2xl text-black max-md:text-xl font-semibold flex flex-col gap-2 bg-green-200 p-5 rounded-md"
-        >
-          <span
-            class="text-xs max-md:text-[.9rem] max-md:text-lg max-md:w-full rounded-lg font-normal"
-          >
-            Performance
-          </span>
-          <span class="dark:text-green-500">53%</span>
-          <span class="text-xs font-semibold dark:text-gray-300 text-main"
-            >+(1.3%)</span
-          >
-        </span>
+    
         <!-- product -->
         <span
           class="text-2xl text-black max-md:text-xl font-semibold flex flex-col gap-2 bg-lime-100 p-5 rounded-md"
@@ -81,7 +69,7 @@
         </span>
       </div>
       <!-- my products -->
-      {%include 'components/dashboard/my-products.html'%}
+      {%include 'components/dashboard/recent-products.html'%}
     </div>
     <!-- side profile details -->
     <div
@@ -91,5 +79,3 @@
     </div>
   </div>
 </section>
-
-{%endblock content%}
