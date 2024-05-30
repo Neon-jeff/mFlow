@@ -1,0 +1,64 @@
+{%extends 'bases/dashboardbase.html'%} {%load static%} {%block content%}
+<section
+  class="mt-20 p-10 px-10 max-md:px-5 dark:bg-dark dark:text-gray-300 text-sm"
+>
+  <h1 class="text-3xl max-md:text-3xl font-semibold pb-10">
+    Affiliate Products
+  </h1>
+
+  <!-- product list card -->
+  <!-- {%include 'pages/dashboard/no-products.html'%} -->
+  <div class="grid grid-cols-3 max-md:gap-5 gap-10 max-md:grid-cols-1">
+    <template x-for="num in [1,2,3,4,5,6]">
+      <div
+        class="flex flex-col gap-4 relative dark:border dark:border-gray-600 dark:p-5 dark:rounded-md"
+      >
+        <div class="relative">
+          <img
+            src="https://images.pexels.com/photos/16764266/pexels-photo-16764266/free-photo-of-a-luxury-chanel-bag.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+            alt="product_image"
+            class="h-56 w-full rounded-xl bg-black object-cover"
+          />
+          <div
+            class="absolute top-0 bottom-0 w-full h-full rounded-xl bg-[rgb(0,0,0,.5)]"
+          >
+            <p
+              class="font-medium absolute text-accent border-2 border-accent text-xs p-2 rounded-md left-5 top-5"
+            >
+              20-In Stock
+            </p>
+          </div>
+          <!-- <p class="border inline absolute right-5 bottom-5 text-xs w-fit border-gray-200 p-2 rounded-md">Ticketing</p>  -->
+        </div>
+        <div class="flex items-center justify-between">
+          <p class="text-lg font-semibold">Product Name</p>
+          <p
+            class="text-lg font-semibold text-main dark:text-lime-400 self-end"
+          >
+            $20.00
+          </p>
+        </div>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi
+          facilis mollitia exercitationem
+        </p>
+        <div class="flex justify-end gap-5">
+          <button
+            @click="showEditProductModal=!showEditProductModal"
+            class="flex justify-center items-center text-base gap-2 font-semibold"
+          >
+            <ion-icon name="people-outline" class="text-2xl"></ion-icon>
+            5
+          </button>
+          <button
+            class="bg-accent text-dark flex items-center gap-2 p-3 rounded-full border dark:bg-neutral-900 dark:border-neutral-900"
+          >
+            <ion-icon name="share-outline"></ion-icon>
+            Promote Product
+          </button>
+        </div>
+      </div>
+    </template>
+  </div>
+</section>
+{%endblock content%}

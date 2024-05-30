@@ -4,8 +4,8 @@ import uuid
 # Create your models here.
 
 ACCOUNT_TYPE_CHOICES=(
-    ('Affiliate','Affiliate'),
-    ('Creator','Creator'),
+    ('affiliate','affiliate'),
+    ('vendor','vendor'),
     ('Customer','Customer')
 )
 
@@ -16,9 +16,10 @@ class Profile(models.Model):
     profile_avatar=models.URLField(null=True,blank=True)
     sales_balance=models.PositiveIntegerField(default=0)
     withdrawal_address=models.CharField(max_length=50,null=True,blank=True)
-    affiliate_balance=models.PositiveBigIntegerField(default=0)
-    email_otp=models.PositiveBigIntegerField(null=True,blank=True)
+    affiliate_balance=models.PositiveIntegerField(default=0)
+    email_otp=models.CharField(null=True,blank=True,max_length=6)
     affiliate_link=models.UUIDField(unique=True,null=True,blank=True)
+    onboarding_complete=models.BooleanField(default=False)
 
     def __str__(self) -> str:
         return f'{self.user.first_name} {self.user.last_name} Profile'

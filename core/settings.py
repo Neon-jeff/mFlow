@@ -108,6 +108,11 @@ AUTH_PASSWORD_VALIDATORS = [
 ]
 
 
+# email configs
+
+EMAIL_USER=''
+EMAIL_AUTH=''
+
 # Internationalization
 # https://docs.djangoproject.com/en/5.0/topics/i18n/
 

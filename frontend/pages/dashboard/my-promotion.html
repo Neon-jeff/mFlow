@@ -1,14 +1,18 @@
-<section class="mt-10 text-sm">
-  <h1 class="text-xl font-semibold items-center mb-5 flex justify-between dark:text-gray-200">
-    Recent Promotions
-      <a class="text-sm font-normal flex items-center gap-1" href="">See All<ion-icon name="arrow-forward-outline" class="text-lg"></ion-icon></a>
+{%extends 'bases/dashboardbase.html'%} {%load static%} {%block content%}
+<section class="mt-20 px-10 max-md:px-5 text-sm">
+  <h1
+    class="text-xl font-semibold items-center mb-5 flex justify-between dark:text-gray-200"
+  >
+    My Promotions
   </h1>
 
   <!-- product lists container -->
-  <div class="grid grid-cols-2 max-md:grid-cols-1 gap-10 ">
+  <div class="grid grid-cols-3 max-md:grid-cols-1 max-md:gap-5 gap-10">
     <!-- product list item -->
-    <template x-for="num in [1,2,3,4,5,6]">
-      <div class="flex items-center gap-4 border p-5 rounded-xl justify-between">
+    <template x-for="num in [1,2,3,4,5,6,8,9]">
+      <div
+        class="flex items-center gap-4 border p-5 rounded-xl justify-between"
+      >
         <div class="relative">
           <img
             src="https://images.pexels.com/photos/5632402/pexels-photo-5632402.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
@@ -26,7 +30,7 @@
           <p>product_link_shortened_here</p>
         </div>
 
-        <div class="flex gap-5 flex-col ">
+        <div class="flex gap-5 flex-col">
           <button
             class="rounded-full dark:border-gray-700 flex items-center justify-center gap-2"
           >
@@ -42,3 +46,5 @@
     </template>
   </div>
 </section>
+
+{%endblock content%}

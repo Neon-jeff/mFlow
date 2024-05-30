@@ -10,3 +10,6 @@ def UserDashboard(request):
 
 def UserWallet(request):
     return render(request,'pages/dashboard/wallet.html')
+
+def AffiliatePromotions(request):
+    return render(request,'pages/dashboard/my-promotion.html')

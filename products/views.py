@@ -7,3 +7,6 @@ def UserProductsListView(request):
 
 def SingleProductLink(request):
     return render(request,'pages/product-page.html')
+
+def PromoteProduct(request):
+    return render(request,'pages/dashboard/promote-products.html')

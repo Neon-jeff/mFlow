@@ -2,7 +2,6 @@
   class="bg-[rgb(0,0,0,.8)] h-screen w-screen fixed top-0 left-0 z-[1]"
   x-show="drawerOpen"
   x-cloak
-  @click="drawerOpen=!drawerOpen"
 >
   <!-- sidenav elems container -->
   <div
@@ -15,6 +14,12 @@
     x-transition:leave-start="transform"
     x-transition:leave-end="transform -translate-x-full"
   >
+    <p
+      @click="drawerOpen=!drawerOpen"
+      class="text-right absolute right-5 top-5"
+    >
+      Close
+    </p>
     <!-- profile card -->
     <!-- <div class="flex flex-col">
       <span class="flex gap-2 items-center text-xl font-semibold">
@@ -38,9 +43,10 @@
       <span class="text-gray-400">Menu</span>
       <a href="">Overview</a>
       <a href="">My Products</a>
+      <a href="">My Promotions</a>
       <a href="">Wallet/Payout</a>
       <a href="">Courses</a>
-      <a href="">Promote Product</a>
+      <a href="">Affiliate Products</a>
     </div>
     <!-- settings -->
     <div class="flex flex-col gap-3 mt-10">
