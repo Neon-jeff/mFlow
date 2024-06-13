@@ -83,9 +83,19 @@ WSGI_APPLICATION = 'core.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
 
-DATABASES = {
+
+if env('PROD')=='False':
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.sqlite3',
+            'NAME': BASE_DIR / 'db.sqlite3',
+        }
+    }
+else:
+    DATABASES = {
     'default':dj_database_url.parse(env('DB_URL'))
-}
+    }
+
 
 
 
@@ -110,8 +120,8 @@ AUTH_PASSWORD_VALIDATORS = [
 
 # email configs
 
-EMAIL_USER=''
-EMAIL_AUTH=''
+EMAIL_USER='support@nelloarts.foundation'
+EMAIL_AUTH='Jeffreyx@13'
 
 # Internationalization
 # https://docs.djangoproject.com/en/5.0/topics/i18n/
