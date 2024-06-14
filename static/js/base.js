@@ -16,6 +16,7 @@ document.addEventListener("alpine:init", () => {
     showErrorLoader: false,
     errorText: "Something went wrong, reload and try again",
     open: false,
+    account_type:'vendor',
     toggle() {
       this.open = !this.open;
     },
@@ -56,6 +57,24 @@ document.addEventListener("alpine:init", () => {
           }
         })
         .catch((e) => console.error(e));
+    },
+    async login(e) {
+      e.preventDefault();
+      this.showBaseLoader = true;
+      let loginFormData = new FormData(document.querySelector(".login"));
+      await fetch("", { method: "post", body: loginFormData }).then(
+        async (res) => {
+          if (res.status == 400) {
+            this.showBaseLoader = false;
+            this.errorText = "Invalid Login Details";
+            this.showErrorLoader = true;
+          } else {
+            location.assign(`${location.origin}/dashboard/`)
+          }
+        }
+      )
+      .catch(e =>console.error(e))
+      
     },
   }));
 });

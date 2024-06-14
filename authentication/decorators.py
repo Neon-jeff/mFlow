@@ -7,3 +7,13 @@ def redirect_dashboard(func):
             return redirect('dashboard')
         return func(request,*args,**kwargs)
     return wrapper
+
+
+def check_onboarding(func):
+    def wrapper(request,*args,**kwargs):
+        if request.user.profile.email_verified==False:
+            return redirect('verify-email')
+        if request.user.profile.onboarding_complete==False:
+            return redirect('choose')
+        return func(request,*args, **kwargs)
+    return wrapper

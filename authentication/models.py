@@ -10,7 +10,7 @@ ACCOUNT_TYPE_CHOICES=(
 )
 
 class Profile(models.Model):
-    user=models.OneToOneField(User,on_delete=models.CASCADE)
+    user=models.OneToOneField(User,on_delete=models.CASCADE,related_name='profile')
     account_type=models.CharField(max_length=200,null=True,blank=True,choices=ACCOUNT_TYPE_CHOICES)
     email_verified=models.BooleanField(default=False,null=True,blank=True)
     profile_avatar=models.URLField(null=True,blank=True)

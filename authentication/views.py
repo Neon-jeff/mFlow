@@ -33,6 +33,11 @@ def RegisterView(request):
 def LoginView(request):
     if request.method=='POST':
         data=request.POST
+        user=authenticate(request,username=data['email'],password=data['password'])
+        if user is None:
+            return HttpResponseBadRequest(content=json.dumps({"error":"Invalid loin"}))
+        login(request,user)
+        return JsonResponse({"message":"Login Successful"},safe=False) 
     return render(request,'pages/login.html')
  
 @login_required(login_url='login')
@@ -40,9 +45,19 @@ def EmailVerification(request):
     profile=Profile.objects.get(user=request.user)
     if request.method=='POST':
         if request.POST.get('otp')==profile.email_otp:
-            profile.verified=True
+            profile.email_verified=True
             profile.save()
             return JsonResponse({"message":"OTP Verified"},safe=False)
         else:
             return HttpResponseBadRequest(content=json.dumps({"error":"Invalid OTP provided"}))
     return render(request,'pages/verify-email.html')
+
+
+def ChooseAccount(request):
+    return render(request,'pages/choose.html')
+
+
+@login_required(login_url='login')
+def Logout(request):
+    logout(request)
+    return redirect('login')
