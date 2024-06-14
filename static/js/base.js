@@ -17,6 +17,7 @@ document.addEventListener("alpine:init", () => {
     errorText: "Something went wrong, reload and try again",
     open: false,
     account_type:'vendor',
+
     toggle() {
       this.open = !this.open;
     },
@@ -76,5 +77,6 @@ document.addEventListener("alpine:init", () => {
       .catch(e =>console.error(e))
       
     },
+    
   }));
 });
