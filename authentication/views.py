@@ -9,11 +9,11 @@ import json
 from handlers.handlemails import SendOTPEmail
 from django.contrib import messages
 from .decorators import redirect_dashboard
-# Create your views here.
+from django.views.decorators.csrf import csrf_exempt# Create your views here.
 
 
 
-
+@redirect_dashboard
 def RegisterView(request):
     if request.method=='POST':
         data=request.POST
@@ -52,8 +52,14 @@ def EmailVerification(request):
             return HttpResponseBadRequest(content=json.dumps({"error":"Invalid OTP provided"}))
     return render(request,'pages/verify-email.html')
 
-
+@csrf_exempt
 def ChooseAccount(request):
+    if request.method=='POST':
+        account_type=request.POST['account_type']
+        request.user.profile.account_type=account_type
+        request.user.profile.onboarding_complete=True
+        request.user.profile.save()
+        return JsonResponse({"message":"Onboarding Complete"},safe=False)
     return render(request,'pages/choose.html')
 
 

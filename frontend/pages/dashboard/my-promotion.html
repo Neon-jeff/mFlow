@@ -11,7 +11,7 @@
     <!-- product list item -->
     <template x-for="num in [1,2,3,4,5,6,8,9]">
       <div
-        class="flex items-center gap-4 border p-5 rounded-xl justify-between"
+        class="flex flex-col items-center gap-4 border p-5 rounded-xl justify-between"
       >
         <div class="relative">
           <img
@@ -19,13 +19,11 @@
             alt="product_image"
             class="h-10 w-10 rounded-full bg-black object-cover"
           />
-          <div
-            class="absolute top-0 bottom-0 w-full h-full rounded-full bg-[rgb(0,0,0,.1)]"
-          ></div>
+
           <!-- <p class="border inline absolute right-5 bottom-5 text-xs w-fit border-gray-200 p-2 rounded-md">Ticketing</p>  -->
         </div>
         <div class="flex flex-col">
-          <p class="text-base font-medium">Product Name</p>
+          <p class="text-base font-medium">Product Name Here</p>
           <p class="text-base font-semibold text-main">$20.00</p>
           <p>product_link_shortened_here</p>
         </div>

@@ -29,7 +29,7 @@ module.exports = {
       colors: {
         main: "#518B56",
         accent: "#B8FFBE",
-        primary: "#a4ec2f",
+        primary: "#FF8600",
         dark: "rgb(12 10 9)",
       },
       fontFamily: {

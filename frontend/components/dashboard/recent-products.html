@@ -8,16 +8,14 @@
   <div class="grid grid-cols-2 max-md:grid-cols-1 gap-10 ">
     <!-- product list item -->
     <template x-for="num in [1,2,3,4,5,6]">
-      <div class="flex items-center gap-4 border p-5 rounded-xl justify-between">
-        <div class="relative">
+      <div class="flex flex-col text-center items-center gap-4 border p-5 rounded-xl justify-between">
+        <div class="relative w-full">
           <img
             src="https://images.pexels.com/photos/5632402/pexels-photo-5632402.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
             alt="product_image"
-            class="h-10 w-10 rounded-full bg-black object-cover"
+            class="h-28 w-full rounded-xl bg-black object-cover"
           />
-          <div
-            class="absolute top-0 bottom-0 w-full h-full rounded-full bg-[rgb(0,0,0,.1)]"
-          ></div>
+
           <!-- <p class="border inline absolute right-5 bottom-5 text-xs w-fit border-gray-200 p-2 rounded-md">Ticketing</p>  -->
         </div>
         <div class="flex flex-col">
@@ -26,7 +24,7 @@
           <p>product_link_shortened_here</p>
         </div>
 
-        <div class="flex gap-5 flex-col ">
+        <div class="flex gap-5   ">
           <button
             class="rounded-full dark:border-gray-700 text-neutral-400 flex items-center justify-center gap-2"
           >
