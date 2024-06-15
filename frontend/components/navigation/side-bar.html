@@ -77,18 +77,4 @@
     </div>
   </div>
 
-  <script>
-    let toggleTheme = document.querySelector(".toggle-theme");
-    toggleTheme.addEventListener("click", () => {
-      if (document.documentElement.classList.contains("dark")) {
-        document.documentElement.classList.toggle("dark");
-        toggleTheme.children[0].setAttribute("name", "sunny");
-        toggleTheme.children[1].textContent = "Light Mode";
-      } else {
-        document.documentElement.classList.toggle("dark");
-        toggleTheme.children[0].setAttribute("name", "moon");
-        toggleTheme.children[1].textContent = "Dark Mode";
-      }
-    });
-  </script>
 </section>
