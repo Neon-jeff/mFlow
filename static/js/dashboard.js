@@ -20,10 +20,6 @@ var options = {
   },
 };
 
-var chart = new ApexCharts(document.querySelector("#chart"), options);
-
-chart.render();
-
 document.addEventListener("alpine:init", async () => {
   // let response = await fetch("/dashboard/profile");
   // console.log(await response.json());
@@ -32,6 +28,8 @@ document.addEventListener("alpine:init", async () => {
       let response = await fetch("/dashboard/profile");
       this.user = await response.json();
       console.log(this.user);
+      var chart = new ApexCharts(document.querySelector("#chart"), options);
+      chart.render();
     },
     user: null,
     drawerOpen: false,
