@@ -1,11 +1,11 @@
 <section
-  class="bg-[rgb(0,0,0,.8)] h-screen w-screen fixed top-0 left-0 z-[1]"
+  class="bg-[rgb(0,0,0,.8)] w-screen fixed top-0 bottom-0 text-sm left-0 z-[1]"
   x-show="drawerOpen"
   x-cloak
 >
   <!-- sidenav elems container -->
   <div
-    class="bg-white dark:bg-neutral-900 *:dark:text-gray-300 max-md:w-4/5 w-1/5 h-screen px-10 pt-5 relative"
+    class="bg-white z-[1] dark:bg-neutral-900 *:dark:text-gray-300 max-md:w-4/5 w-1/5 h-screen px-10 pt-5 relative"
     x-show="drawerOpen"
     x-transition:enter="transition duration-1000"
     x-transition:enter-start="transform -translate-x-full"
@@ -14,12 +14,12 @@
     x-transition:leave-start="transform"
     x-transition:leave-end="transform -translate-x-full"
   >
-    <p
+    <span
       @click="drawerOpen=!drawerOpen"
-      class="text-right absolute right-5 top-5"
+      class="text-right absolute right-3 cursor-pointer top-5 py-2 px-4 border border-dark rounded-full"
     >
       Close
-    </p>
+    </span>
     <!-- profile card -->
     <!-- <div class="flex flex-col">
       <span class="flex gap-2 items-center text-xl font-semibold">
@@ -41,12 +41,18 @@
     <!-- main nav element -->
     <div class="flex flex-col gap-3 mt-10">
       <span class="text-gray-400">Menu</span>
-      <a href="">Overview</a>
-      <a href="">My Products</a>
-      <a href="">My Promotions</a>
-      <a href="">Wallet/Payout</a>
+      <a href="{%url 'dashboard'%}">Overview</a>
+      <a href="" x-show="user.account_type=='vendor'">My Products</a>
+      <a
+        href="{%url 'affiliate-promotions'%}"
+        x-show="user.account_type=='affiliate'"
+        >My Campaigns</a
+      >
+      <a href="{%url 'wallet'%}" x-show="user.account_type=='affiliate'"
+        >Wallet/Payout</a
+      >
       <a href="">Courses</a>
-      <a href="">Affiliate Products</a>
+      <a href="" x-show="user.account_type=='affiliate'">New Products</a>
     </div>
     <!-- settings -->
     <div class="flex flex-col gap-3 mt-10">
@@ -76,5 +82,4 @@
       <a href="{%url 'logout'%}">Logout</a>
     </div>
   </div>
-
 </section>

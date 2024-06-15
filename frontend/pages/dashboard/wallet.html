@@ -1,10 +1,8 @@
 {%extends 'bases/dashboardbase.html'%} {%load static%} {%block content%}
-<section
-  class="mt-20 h-72  p-10 px-10 max-md:px-5 dark:bg-dark dark:text-gray-300 text-sm"
->
+<section class="p-10 px-10 max-md:px-5 dark:bg-dark dark:text-gray-300 text-xs">
   {%include 'components/dashboard/edit-wallet-modal.html'%}
 
-  <h1 class="text-3xl max-md:text-3xl font-semibold pb-5">My Wallet</h1>
+  <h1 class="text-2xl max-md:text-xl font-semibold pb-5">My Wallet</h1>
   <!-- product list card -->
   {%include 'components/dashboard/edit-wallet-modal.html'%}
 
@@ -16,8 +14,8 @@
       class="max-md:gap-5 h-full border border-neutral-300 w-1/2 p-5 flex flex-col gap-5 rounded-xl max-md:w-2/3 max-sm:w-full"
     >
       <div class="flex justify-between">
-        <p class="text-2xl max-md:text-xl font-medium">Wallet Details</p>
-        <p class="text-xl font-semibold text-main">$500.00</p>
+        <p class="text-xl max-md:text-xl font-medium">Wallet Details</p>
+        <p class="text-lg font-semibold text-main">$500.00</p>
       </div>
       <div class="p-5 w-full rounded-md flex flex-col bg-neutral-100">
         <p class="font-semibold">USDT</p>

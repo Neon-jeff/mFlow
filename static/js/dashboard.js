@@ -31,7 +31,7 @@ document.addEventListener("alpine:init", async () => {
       var chart = new ApexCharts(document.querySelector("#chart"), options);
       chart.render();
     },
-    user: null,
+    user: {},
     drawerOpen: false,
     profileOptionsOpen: false,
     user_products: [],
