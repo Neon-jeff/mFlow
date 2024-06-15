@@ -10,15 +10,15 @@
     @click="drawerOpen=!drawerOpen"
   ></ion-icon>
   <!-- profile state toggler -->
-  <div class="fixed right-10 flex items-center gap-5 w-1/5 max-md:w-1/2">
+  <div class="fixed right-10 flex items-center gap-5 w-1/5  max-md:w-1/2">
     <ul class="flex flex-col gap-5 items-center w-full">
       <!-- current mode -->
       <div
-        class="flex w-full bg-gray-100 dark:bg-neutral-900 dark:text-gray-300 text-gray-600 p-3 max-sm:p-3 rounded-full items-center gap-2 justify-center cursor-pointer"
+        class="flex w-full bg-gray-100 dark:bg-neutral-900 group dark:text-gray-300 text-gray-600 p-5 max-sm:p-3 rounded-full items-center gap-2 justify-center cursor-pointer"
         @click="profileOptionsOpen=!profileOptionsOpen"
       >
         <span class="font-medium"> Vendor Mode </span>
-        <ion-icon name="chevron-down"></ion-icon>
+        <ion-icon name="chevron-down" class="group-focus:rotate-180"></ion-icon>
       </div>
 
       <!-- profile state options -->
