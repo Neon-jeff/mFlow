@@ -52,7 +52,11 @@
         >Wallet/Payout</a
       >
       <a href="">Courses</a>
-      <a href="" x-show="user.account_type=='affiliate'">New Products</a>
+      <a
+        href="{%url 'affiliate-market'%}"
+        x-show="user.account_type=='affiliate'"
+        >New Products</a
+      >
     </div>
     <!-- settings -->
     <div class="flex flex-col gap-3 mt-10">

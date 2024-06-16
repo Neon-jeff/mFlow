@@ -972,6 +972,10 @@ video {
   width: 1.5rem;
 }
 
+.w-3 {
+  width: 0.75rem;
+}
+
 .max-w-2xl {
   max-width: 42rem;
 }
@@ -1148,6 +1152,10 @@ video {
 
 .self-center {
   align-self: center;
+}
+
+.overflow-auto {
+  overflow: auto;
 }
 
 .overflow-scroll {
@@ -2156,6 +2164,10 @@ input:-webkit-autofill:active {
 
   .max-md\:pt-20 {
     padding-top: 5rem;
+  }
+
+  .max-md\:pb-5 {
+    padding-bottom: 1.25rem;
   }
 
   .max-md\:text-center {
