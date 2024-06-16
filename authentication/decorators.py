@@ -9,6 +9,7 @@ def redirect_dashboard(func):
     return wrapper
 
 
+
 def check_onboarding(func):
     def wrapper(request,*args,**kwargs):
         if request.user.profile.email_verified==False:

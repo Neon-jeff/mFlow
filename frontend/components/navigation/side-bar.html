@@ -42,7 +42,9 @@
     <div class="flex flex-col gap-3 mt-10">
       <span class="text-gray-400">Menu</span>
       <a href="{%url 'dashboard'%}">Overview</a>
-      <a href="" x-show="user.account_type=='vendor'">My Products</a>
+      <a href="{%url 'user-products'%}" x-show="user.account_type=='vendor'"
+        >My Products</a
+      >
       <a
         href="{%url 'affiliate-promotions'%}"
         x-show="user.account_type=='affiliate'"
