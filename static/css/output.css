@@ -2033,6 +2033,10 @@ input:-webkit-autofill:active {
     margin-top: 5rem;
   }
 
+  .max-md\:mt-28 {
+    margin-top: 7rem;
+  }
+
   .max-md\:flex {
     display: flex;
   }

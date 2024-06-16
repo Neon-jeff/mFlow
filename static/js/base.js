@@ -35,7 +35,7 @@ document.addEventListener("alpine:init", () => {
             this.errorText = "Invalid OTP provided";
             this.showErrorLoader = true;
           } else {
-            location.assign(`${location.origin}/dashboard`);
+            location.assign(`${location.origin}/auth/choose/`);
           }
         })
         .catch((e) => console.error(e));

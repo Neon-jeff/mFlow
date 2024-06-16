@@ -9,6 +9,7 @@ import json
 from handlers.handlemails import SendOTPEmail
 from django.contrib import messages
 from .decorators import redirect_dashboard
+from uuid import uuid5,uuid4
 from django.views.decorators.csrf import csrf_exempt# Create your views here.
 
 
@@ -53,9 +54,12 @@ def EmailVerification(request):
     return render(request,'pages/verify-email.html')
 
 @csrf_exempt
+@login_required(login_url='login')
 def ChooseAccount(request):
     if request.method=='POST':
         account_type=request.POST['account_type']
+        if account_type=='affiliate':
+            request.user.profile.affiliate_link=uuid5(uuid4(),request.user.email)
         request.user.profile.account_type=account_type
         request.user.profile.onboarding_complete=True
         request.user.profile.save()
@@ -68,9 +72,9 @@ def Logout(request):
     logout(request)
     return redirect('login')
 
-@login_required(login_url='login')
-def VendorDetails(request):
-    pass
-
-def AffiliateDetails(request):
-    pass
+def test_uuid(request):
+    user:User=request.user
+    profile:Profile=Profile.objects.get(user=user)
+    profile.affiliate_link=uuid5(uuid4(),user.email)
+    profile.save()
+    return JsonResponse({"status":"successful"},safe=False)

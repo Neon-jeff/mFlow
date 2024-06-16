@@ -10,3 +10,13 @@ def SingleProductLink(request):
 
 def PromoteProduct(request):
     return render(request,'pages/dashboard/promote-products.html')
+
+
+def handle_payout():
+    pass
+
+def handles_promotions_earning():
+    pass
+
+def handles_subscription():
+    pass
