@@ -1,42 +1,56 @@
 {%extends 'bases/dashboardbase.html'%} {%load static%} {%block content%}
-<section class="px-10 max-md:px-5 text-sm">
-  <h1
-    class="text-xl font-semibold items-center mb-5 flex justify-between dark:text-gray-200"
-  >
-    My Promotions
-  </h1>
+<section class="px-10 mb-20 max-md:px-5 text-sm">
+  <div class="flex justify-between items-center mb-5">
+    <h1 class="text-xl font-semibold">My Promotions</h1>
+    <span
+      class="px-6 py-3 cursor-pointer rounded-xl bg-neutral-100 flex items-center gap-2"
+      >Sort By<ion-icon name="chevron-down-outline"></ion-icon
+    ></span>
+  </div>
 
   <!-- product lists container -->
-  <div class="grid grid-cols-3 max-md:grid-cols-1 max-md:gap-5 gap-10">
+  <div class="grid grid-cols-3 max-md:grid-cols-1 max-md:gap-3 gap-10">
     <!-- product list item -->
     <template x-for="num in [1,2,3,4,5,6,8,9]">
-      <div
-        class="flex flex-col items-center text-center gap-4 border p-5 rounded-xl justify-between"
-      >
-        <div class="relative">
-          <img
-            src="https://images.pexels.com/photos/5632402/pexels-photo-5632402.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-            alt="product_image"
-            class="h-28 rounded-lg bg-black object-cover"
-          />
-
-          <!-- <p class="border inline absolute right-5 bottom-5 text-xs w-fit border-gray-200 p-2 rounded-md">Ticketing</p>  -->
+      <div class="flex flex-col gap-5 border p-5 rounded-xl justify-between">
+        <div class="flex justify-between">
+          <span>Product Name</span>
+          <span class="text-neutral-500 flex items-center gap-2"
+            ><i class="ri-user-line"></i>Vendor Name
+          </span>
         </div>
-        <div class="flex flex-col">
-          <p class="text-base font-medium">Product Name Here</p>
-          <p class="text-base font-semibold text-main">$20.00</p>
-          <p>product_link_shortened_here</p>
+        <div class="flex items-center justify-between">
+          <div class="grid grid-cols-3 gap-5 max-md:gap-2 items-center">
+            <img
+              src="https://images.pexels.com/photos/5632402/pexels-photo-5632402.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+              alt="product_image"
+              class="h-10 w-10 rounded-lg bg-neutral-400 object-cover"
+            />
+
+            <p class="text-sm max-md:text-sm font-semibold text-main">$20.00</p>
+          </div>
+          <span class="bg-emerald-100 text-xs px-3 py-1 rounded-lg"
+            >Ongoing
+          </span>
         </div>
 
-        <div class="flex gap-2 text-neutral-500">
-          <button
+        <!-- interactions and share -->
+        <div
+          class="flex gap-5 w-fit text-xs max-md:text-xs rounded-md text-neutral-500"
+        >
+          <span
+            class="h-6 w-6 flex items-center justify-center rounded-full bg-main"
+          >
+            <i class="ri-share-line text-white"></i>
+          </span>
+          <butto
             class="rounded-full dark:border-gray-700 flex items-center justify-center gap-2"
           >
-            <ion-icon name="eye" class="text-lg"></ion-icon>
+            <i class="ri-eye-2-line"></i>
             400
-          </button>
+          </butto>
           <button class="flex items-center justify-center gap-2 rounded-full">
-            <ion-icon name="card" class="text-lg"></ion-icon>
+            <ion-icon name="card" class="text-sm"></ion-icon>
             $0.4
           </button>
         </div>
