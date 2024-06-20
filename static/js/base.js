@@ -12,6 +12,7 @@
 
 document.addEventListener("alpine:init", () => {
   Alpine.data("base", () => ({
+    showMobileNav:false,
     showBaseLoader: false,
     showErrorLoader: false,
     errorText: "Something went wrong, reload and try again",

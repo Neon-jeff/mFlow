@@ -1,5 +1,7 @@
+{%include 'components/navigation/mobile-nav.html'%}
+
 <nav
-  class="flex justify-between bg-white items-center fixed w-full px-10 font-normal text-sm max-md:px-5 z-[1] left-1/2 top-0 py-5 -translate-x-1/2 text-dark backdrop-blur-lg backdrop-filter bg-opacity-70"
+  class="flex justify-between bg-gray-50 items-center fixed w-full px-10 font-normal text-sm max-md:px-5 z-[1] left-1/2 top-0 py-5 -translate-x-1/2 text-dark"
 >
   <a
     href=""
@@ -14,9 +16,9 @@
       class="hover:text-main transition ease-in duration-100"
       >Home</a
     >
-    <a href="" class="hover:text-main transition ease-in duration-100"
+    <!-- <a href="" class="hover:text-main transition ease-in duration-100"
       >Products</a
-    >
+    > -->
     <a href="" class="hover:text-main transition ease-in duration-100"
       >Vendors</a
     >
@@ -30,14 +32,27 @@
       class="hover:text-main transition ease-in duration-100"
       >Courses
     </a>
+    <a
+      href="{%url 'pricing'%}"
+      class="hover:text-main transition ease-in duration-100"
+      >Pricing
+    </a>
   </ul>
   <ul class="flex gap-10 items-center">
     <a href="" class="text-main flex items-center gap-2 max-md:hidden">
       <ion-icon name="mail-unread" class="text-2xl"></ion-icon>
       Get in touch
     </a>
-    <a href="{%url 'login'%}" class="bg-dark text-white p-3 px-5 rounded-full"
+    <i
+      x-transition
+      x-transition.duration.500ms
+      @click="showMobileNav=!showMobileNav"
+      :class="!showMobileNav?'ri-menu-line':'ri-close-fill'"
+      class="lg:hidden text-xl px-2 py-1 bg-gray-200 text-gray-500 rounded-md"
+    ></i>
+
+    <!-- <a href="{%url 'login'%}" class="bg-dark text-white p-3 px-5 rounded-full"
       >Log In</a
-    >
+    > -->
   </ul>
 </nav>

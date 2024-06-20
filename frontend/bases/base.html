@@ -21,6 +21,10 @@
       type="module"
       src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
     ></script>
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
     <script
       nomodule
       src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
@@ -28,14 +32,13 @@
     <script src="https://unpkg.com/embla-carousel/embla-carousel.umd.js"></script>
     <script src="https://unpkg.com/embla-carousel-autoplay/embla-carousel-autoplay.umd.js"></script>
   </head>
-  <body x-data="base" class="h-full relative">
-    {% include 'components/navigation/navbar.html'%}
-     {% include 'components/loaders/loading.html'%}
-      {% include 'components/loaders/error.html'%}
-      {% include 'components/loaders/alert.html'%}
-       {% block content %} {% endblock content %}
+  <body x-data="base" class="h-full relative bg-gray-50">
+    {% include 'components/navigation/navbar.html'%} {% include
+    'components/loaders/loading.html'%} {% include
+    'components/loaders/error.html'%} {% include
+    'components/loaders/alert.html'%} {% block content %} {% endblock content %}
 
-       <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.1/flowbite.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.1/flowbite.min.js"></script>
     <script src="{%static 'js/base.js'%}"></script>
   </body>
 </html>

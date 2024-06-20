@@ -67,6 +67,7 @@ def ChooseAccount(request):
     return render(request,'pages/choose.html')
 
 
+
 @login_required(login_url='login')
 def Logout(request):
     logout(request)

@@ -22,6 +22,10 @@ def AffiliatePromotions(request):
 
 
 @login_required(login_url='login')
+def SelectSubscription(request):
+    return render(request,'pages/dashboard/subscription.html')
+
+@login_required(login_url='login')
 def VendorDetails(request):
     pass
 

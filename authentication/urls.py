@@ -8,5 +8,5 @@ urlpatterns=[
     path('verify-email/',EmailVerification,name='verify-email'),
     path('logout',Logout,name='logout'),
     path('choose/',ChooseAccount,name='choose'),
-    path('test',test_uuid,name='test')
+    path('test',test_uuid,name='test'),
 ]

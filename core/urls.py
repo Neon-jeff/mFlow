@@ -27,6 +27,9 @@ urlpatterns = [
     path('dashboard/',include('creators.urls')),
     path('products/',include('products.urls')),
     path('affiliate-network/',TemplateView.as_view(template_name='pages/affiliate-network.html'),name='affiliate'),
+    path('vendor-network/',TemplateView.as_view(template_name='pages/vendor-network.html'),name='vendor'),
+    path('pricing/',TemplateView.as_view(template_name='pages/pricing.html'),name='pricing'),
+    
 ]
 
 urlpatterns += static(settings.MEDIA_URL,document_root=settings.MEDIA_ROOT)
