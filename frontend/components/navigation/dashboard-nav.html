@@ -19,11 +19,11 @@
         @click="profileOptionsOpen=!profileOptionsOpen"
       >
         <ion-icon name="person" class="text-xl"></ion-icon>
-        <span class="font-medium"> Vendor Mode </span>
-        <ion-icon
+        <span class="font-medium" x-text="user.account_type + ' account'">  </span>
+        <!-- <ion-icon
           name="chevron-down"
           :class="profileOptionsOpen?'rotate-180':'rotate-0'"
-        ></ion-icon>
+        ></ion-icon> -->
       </div>
 
       <!-- profile state options -->

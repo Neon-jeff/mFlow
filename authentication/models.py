@@ -8,6 +8,11 @@ ACCOUNT_TYPE_CHOICES=(
     ('vendor','vendor'),
     ('Customer','Customer')
 )
+subscription_plans=(
+    ('starter','starter'),
+    ('pro','pro'),
+    ('superior','superior')
+)
 
 class Profile(models.Model):
     user=models.OneToOneField(User,on_delete=models.CASCADE,related_name='profile')
@@ -47,9 +52,10 @@ class VendorSubscriptionPayment(models.Model):
         return f'{self.user.first_name} {self.user.last_name} {self.subscription_type.plan_name} Vendor Subscription'
 
 class AffiliateSubscriptionPayment(models.Model):
-    user=models.ForeignKey(User,on_delete=models.CASCADE,null=True,blank=True)
-    subscription_type=models.ForeignKey(AffiliateSubscriptionPlan,on_delete=models.PROTECT)
+    user=models.ForeignKey(User,on_delete=models.CASCADE,null=True,blank=True,related_name='subscription')
+    subscription_type=models.CharField(null=True,blank=True,max_length=100,choices=subscription_plans)
     created=models.DateField(auto_now_add=True)
-    
+    proof=models.ImageField(null=True,blank=True,upload_to='subscriptions')
+    verified=models.BooleanField(default=False)
     def __str__(self) -> str:
-        return f'{self.user.first_name} {self.user.last_name} {self.subscription_type.plan_name} Vendor Subscription'
+        return f'{self.user.first_name} {self.user.last_name} {self.subscription_type} Affiliate Subscription'

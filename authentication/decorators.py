@@ -16,5 +16,7 @@ def check_onboarding(func):
             return redirect('verify-email')
         if request.user.profile.onboarding_complete==False:
             return redirect('choose')
+        if request.user.subscription.all()[0].verified==False:
+            return redirect ('success')
         return func(request,*args, **kwargs)
     return wrapper

@@ -22,6 +22,28 @@ document.addEventListener("alpine:init", () => {
     toggle() {
       this.open = !this.open;
     },
+    async createSubscription(e){
+      e.preventDefault()
+      let form=new FormData(document.querySelector('.subform'))
+      for(let i of form.entries()){
+        console.log(i);
+      }
+      await fetch("", {
+        method: "post",
+        body: form,
+      })
+        .then(async (res) => {
+          if (res.status == 400) {
+            this.showBaseLoader = false;
+            this.errorText = "Something went wrong, please try again";
+            this.showErrorLoader = true;
+          } else {
+            console.log(await res.json());
+            location.assign(`${location.origin}/auth/success/`);
+          }
+        })
+        .catch((e) => console.error(e));      
+    },
     async verifyOtp(e) {
       e.preventDefault();
       this.showBaseLoader = true;

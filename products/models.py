@@ -9,8 +9,6 @@ product_type=(
     ('e-book','e-book'),
     ('physical','physical'),
     ('digial','digital')
-
-
 )
 
 class Product(models.Model):

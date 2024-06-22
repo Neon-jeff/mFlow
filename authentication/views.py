@@ -11,6 +11,7 @@ from django.contrib import messages
 from .decorators import redirect_dashboard
 from uuid import uuid5,uuid4
 from django.views.decorators.csrf import csrf_exempt# Create your views here.
+from .models import AffiliateSubscriptionPayment
 
 
 
@@ -67,6 +68,23 @@ def ChooseAccount(request):
     return render(request,'pages/choose.html')
 
 
+@login_required(login_url='login')
+def CreateSubscription(request):
+    if request.method=='POST':
+        image=request.FILES['image']
+        data=request.POST
+        AffiliateSubscriptionPayment.objects.create(
+            user=request.user,
+            subscription_type=data['bordered-radio'],
+            proof=image
+        )
+        messages.success(request,'Subscription payment successful, wait for confirmation')
+        return JsonResponse({"status":"success"},safe=False)
+    return render(request,'pages/pay_subscription.html')
+
+
+def SuscriptionSucess(request):
+    return render(request,'pages/success.html')
 
 @login_required(login_url='login')
 def Logout(request):

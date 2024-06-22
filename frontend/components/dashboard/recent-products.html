@@ -8,28 +8,37 @@
     ></a> -->
   </h1>
 
-  <!-- product lists container -->
+   <!-- product lists container -->
   <div class="grid grid-cols-3 max-md:grid-cols-1 max-md:gap-3 gap-10">
     <!-- product list item -->
-    <template x-for="num in [1,2,3,4,5,6,8,9]">
+    <template x-for="promotion in promotions">
       <div class="flex flex-col gap-5 border p-5 rounded-xl justify-between">
         <div class="flex justify-between">
-          <span>Product Name</span>
+          <span x-text="promotion.name">Product Name</span>
           <span class="text-neutral-500 flex items-center gap-2"
-            ><i class="ri-user-line"></i>Vendor Name
+            ><i class="ri-user-line"></i>
+            <span x-text="promotion.vendor" class="text-xs"></span>
           </span>
         </div>
         <div class="flex items-center justify-between">
           <div class="grid grid-cols-3 gap-5 max-md:gap-2 items-center">
             <img
-              src="https://images.pexels.com/photos/5632402/pexels-photo-5632402.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+              :src="`${location.origin}${promotion.image}`"
               alt="product_image"
               class="h-10 w-10 rounded-lg bg-neutral-400 object-cover"
             />
 
-            <p class="text-sm max-md:text-sm font-semibold text-main">$20.00</p>
+            <p
+              class="text-sm max-md:text-sm font-semibold text-main"
+              x-text="'$' + promotion.price"
+            >
+              $20.00
+            </p>
           </div>
-          <span class="bg-emerald-100 text-xs px-3 py-1 rounded-lg"
+          <span
+            class="text-xs px-3 py-1 rounded-lg"
+            :class="(promotion.status=='ongoing')?'bg-red-100:'bg-emerald-100'"
+            x-text="promotion.status"
             >Ongoing
           </span>
         </div>
@@ -39,16 +48,16 @@
           class="flex gap-5 w-fit text-xs max-md:text-xs rounded-md text-neutral-500"
         >
           <span
-            class="p-2 text-white cursor-pointer gap-2 flex items-center justify-center rounded-full bg-main"
+            class=" text-white p-2 gap-2 flex items-center justify-center rounded-full bg-main"
           >
             <i class="ri-share-line text-white"></i>
-            <span>Share</span>
+            Share
           </span>
           <butto
             class="rounded-full dark:border-gray-700 flex items-center justify-center gap-2"
           >
-            <i class="ri-eye-line"></i>
-            400
+            <i class="ri-eye-2-line"></i>
+            <span x-text="promotion.views"></span>
           </butto>
           <button class="flex items-center justify-center gap-2 rounded-full">
             <ion-icon name="card" class="text-sm"></ion-icon>

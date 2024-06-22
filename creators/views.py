@@ -3,12 +3,28 @@ from django.http import JsonResponse
 from django.contrib.auth.decorators import login_required
 from authentication.decorators import check_onboarding
 from django.contrib.auth.models import User
+from .models import Promotion
+from products.models import Product
+from django.contrib import messages
+from django.views.decorators.csrf import csrf_exempt
+from django.forms.models import model_to_dict
+
 # Create your views here.
 
 @check_onboarding
 @login_required(login_url='login')
 def UserDashboard(request):
-    return render(request,'pages/dashboard/dashboard.html')
+    user_promotions=[
+        {
+            **model_to_dict(promotion),
+            'image':promotion.product.product_image.url,
+            'name':promotion.product.product_name,
+            'vendor':f'{promotion.product.user.first_name} {promotion.product.user.last_name}',
+            'price':promotion.product.price
+        }
+        for promotion in Promotion.objects.filter(user=request.user)
+    ]    
+    return render(request,'pages/dashboard/dashboard.html',{'promotions':user_promotions})
 
 
 @login_required(login_url='login')
@@ -18,7 +34,17 @@ def UserWallet(request):
 
 @login_required(login_url='login')
 def AffiliatePromotions(request):
-    return render(request,'pages/dashboard/my-promotion.html')
+    user_promotions=[
+        {
+            **model_to_dict(promotion),
+            'image':promotion.product.product_image.url,
+            'name':promotion.product.product_name,
+            'vendor':f'{promotion.product.user.first_name} {promotion.product.user.last_name}',
+            'price':promotion.product.price
+        }
+        for promotion in Promotion.objects.filter(user=request.user)
+    ]
+    return render(request,'pages/dashboard/my-promotion.html',{'promotions':user_promotions})
 
 
 @login_required(login_url='login')
@@ -40,6 +66,19 @@ def AffiliateDetails(request):
         "sales_balance":user.profile.sales_balance,
         "affiliate_link":user.profile.affiliate_link,
         "account_type":user.profile.account_type,
-        
     }
     return JsonResponse(data,safe=False)
+
+@login_required(login_url='login')
+@csrf_exempt
+def CreatePromotion(request):
+    if request.method=='POST':
+        _data=request.POST
+        product=Product.objects.get(product_id=_data['product'])
+        Promotion.objects.create(
+            user=request.user,
+            product=product,
+            views=0
+        )
+        messages.success(request,'Product campaign created')
+        return JsonResponse({"status":"success"},safe=False)

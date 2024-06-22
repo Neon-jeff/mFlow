@@ -6,6 +6,7 @@ urlpatterns=[
     path('wallet/',UserWallet,name='wallet'),
     path('affiliate/my-promotions/',AffiliatePromotions,name='affiliate-promotions'),
     path('profile',AffiliateDetails,name='adetails'),
-    path('subscription/',SelectSubscription,name='select-sub')
+    path('subscription/',SelectSubscription,name='select-sub'),
+    path('create-promotion/',CreatePromotion,name='create-promotion')
 
 ]

@@ -9,4 +9,6 @@ urlpatterns=[
     path('logout',Logout,name='logout'),
     path('choose/',ChooseAccount,name='choose'),
     path('test',test_uuid,name='test'),
+    path('subscribe/',CreateSubscription,name='subscribe'),
+    path('success/',SuscriptionSucess,name='success')
 ]

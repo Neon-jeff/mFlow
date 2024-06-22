@@ -5,6 +5,9 @@ from .models import Product
 from uuid import uuid4,uuid5
 from django.contrib import messages
 import json
+from django.forms.models import model_to_dict
+from creators.models import Promotion
+
 # Create your views here.
 
 def UserProductsListView(request):
@@ -15,7 +18,21 @@ def SingleProductLink(request,pk):
     return render(request,'pages/product-page.html',{"product":product})
 
 def PromoteProduct(request):
-    return render(request,'pages/dashboard/promote-products.html')
+    user_promotions_ids=[promotion.product.id for promotion in Promotion.objects.filter(user=request.user)]
+    print(user_promotions_ids)
+    products=[
+        {
+            **model_to_dict(product),
+            "product_image":product.product_image.url,
+            "user":f'{product.user.first_name} {product.user.last_name}',
+            "in_user_campaign":True if product.id in user_promotions_ids else False,
+            "promotions":len(product.promotions.all())
+        } 
+        for product in Product.objects.all().order_by('-id')]
+
+        
+    # all_products=list(Product.objects.values().order_by('-id'))
+    return render(request,'pages/dashboard/promote-products.html',{'products':products})
 
 
 def CreateProduct(request):

@@ -63,5 +63,22 @@ document.addEventListener("alpine:init", async () => {
         }
       });
     },
+    async addProductToPromotion(id) {
+      this.showBaseLoader=true
+      let form = new FormData();
+      form.set("product", id);
+      let res = await fetch("/dashboard/create-promotion/", {
+        method: "post",
+        body: form,
+      });
+      if (!res.ok) {
+        this.errorText="Something went wrong,try again"
+        this.showBaseLoader=false
+        this.showErrorLoader=true
+        return
+      }
+      this.showBaseLoader=false
+      window.location.reload()
+    },
   }));
 });

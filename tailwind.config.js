@@ -30,7 +30,7 @@ module.exports = {
         main: "#518B56",
         accent: "#B8FFBE",
         primary: "#FF8600",
-        dark: "rgb(12 10 9)",
+        dark: "#171717",
       },
       fontFamily: {
         workSans: ["Work Sans", "sans-serif"],
