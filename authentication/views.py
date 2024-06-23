@@ -128,6 +128,7 @@ def ChangePassword(request):
             return render(request,'pages/reset-password.html')
         else:
             user.set_password(data['password'])
+            user.save()
             messages.success(request,'Password Updated')
             return redirect('login')
     return render(request,'pages/reset-password.html')
