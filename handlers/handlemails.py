@@ -34,7 +34,7 @@ def SendSubEmail(user,plan):
     recipient = f'{user.email}'
 # Create message
     msg = MIMEMultipart("alternative")
-    email_template=render_to_string('emails/subscription.html',{'user':'','plan':plan})
+    email_template=render_to_string('emails/subscription.html',{'user':user,'plan':plan})
     # text="Hi, welcome to nello"
     msg['Subject'] = f"Subscription Verified"
     msg['From'] = sender

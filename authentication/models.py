@@ -66,4 +66,4 @@ class AffiliateSubscriptionPayment(models.Model):
         old_instance=AffiliateSubscriptionPayment.objects.get(id=self.id)
         if old_instance.verified !=self.verified and self.verified==True:
             SendSubEmail(self.user,self.subscription_type)
-        return super().save()
+        return super(AffiliateSubscriptionPayment,self).save()
