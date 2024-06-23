@@ -120,8 +120,8 @@ AUTH_PASSWORD_VALIDATORS = [
 
 # email configs
 
-EMAIL_USER='support@nelloarts.foundation'
-EMAIL_AUTH='Jeffreyx@13'
+EMAIL_USER=env('EMAIL_USER')
+EMAIL_AUTH=env('EMAIL_AUTH')
 
 # Internationalization
 # https://docs.djangoproject.com/en/5.0/topics/i18n/

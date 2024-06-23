@@ -12,9 +12,8 @@ from uuid import uuid4,uuid5
 
 
 # Create your views here.
-
-@check_onboarding
 @login_required(login_url='login')
+@check_onboarding
 def UserDashboard(request):
     user_promotions=[
         {

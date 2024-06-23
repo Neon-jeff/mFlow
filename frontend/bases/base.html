@@ -5,7 +5,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Kettle Wells Pro</title>
+    <title>Kettle Well Pro</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -33,11 +33,10 @@
     <script src="https://unpkg.com/embla-carousel-autoplay/embla-carousel-autoplay.umd.js"></script>
   </head>
   <body x-data="base" class="h-full relative bg-gray-50">
-    {% include 'components/navigation/navbar.html'%}
-     {% include 'components/loaders/loading.html'%}
-     {% include 'components/loaders/error.html'%}
-      {% include 'components/loaders/alert.html'%}
-       {% block content %} {% endblock content %}
+    {% include 'components/navigation/navbar.html'%} {% include
+    'components/loaders/loading.html'%} {% include
+    'components/loaders/error.html'%} {% include
+    'components/loaders/alert.html'%} {% block content %} {% endblock content %}
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.1/flowbite.min.js"></script>
     <script src="{%static 'js/base.js'%}"></script>

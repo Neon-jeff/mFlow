@@ -12,7 +12,7 @@
 
 document.addEventListener("alpine:init", () => {
   Alpine.data("base", () => ({
-    showMobileNav:false,
+    showMobileNav: false,
     showBaseLoader: false,
     showErrorLoader: false,
     errorText: "Something went wrong, reload and try again",
@@ -22,10 +22,10 @@ document.addEventListener("alpine:init", () => {
     toggle() {
       this.open = !this.open;
     },
-    async createSubscription(e){
-      e.preventDefault()
-      let form=new FormData(document.querySelector('.subform'))
-      for(let i of form.entries()){
+    async createSubscription(e) {
+      e.preventDefault();
+      let form = new FormData(document.querySelector(".subform"));
+      for (let i of form.entries()) {
         console.log(i);
       }
       await fetch("", {
@@ -42,7 +42,7 @@ document.addEventListener("alpine:init", () => {
             location.assign(`${location.origin}/auth/success/`);
           }
         })
-        .catch((e) => console.error(e));      
+        .catch((e) => console.error(e));
     },
     async verifyOtp(e) {
       e.preventDefault();
@@ -127,7 +127,7 @@ document.addEventListener("alpine:init", () => {
         body: formdata,
       }).then(async (res) => {
         if (res.ok) {
-          location.assign(`${location.origin}/dashboard/`);
+          location.assign(`${location.origin}/auth/subscribe/`);
         } else {
           this.showBaseLoader = false;
           this.errorText = "Connection problems, please try again";
