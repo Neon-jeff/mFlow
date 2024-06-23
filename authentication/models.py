@@ -62,8 +62,8 @@ class AffiliateSubscriptionPayment(models.Model):
     def __str__(self) -> str:
         return f'{self.user.first_name} {self.user.last_name} {self.subscription_type} Affiliate Subscription'
     
-    def save(self,) -> None:
+    def save(self,*args, **kwargs) -> None:
         old_instance=AffiliateSubscriptionPayment.objects.get(id=self.id)
         if old_instance.verified !=self.verified and self.verified==True:
             SendSubEmail(self.user,self.subscription_type)
-        return super(AffiliateSubscriptionPayment,self).save()
+        return super(AffiliateSubscriptionPayment,self).save(*args, **kwargs)
