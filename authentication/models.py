@@ -1,6 +1,8 @@
+from typing import Iterable
 from django.db import models
 from django.contrib.auth.models import User
 import uuid
+from handlers.handlemails import SendSubEmail
 # Create your models here.
 
 ACCOUNT_TYPE_CHOICES=(
@@ -59,3 +61,9 @@ class AffiliateSubscriptionPayment(models.Model):
     verified=models.BooleanField(default=False)
     def __str__(self) -> str:
         return f'{self.user.first_name} {self.user.last_name} {self.subscription_type} Affiliate Subscription'
+    
+    def save(self,) -> None:
+        old_instance=AffiliateSubscriptionPayment.objects.get(id=self.id)
+        if old_instance.verified !=self.verified and self.verified==True:
+            SendSubEmail(self.user,self.subscription_type)
+        return super().save()
