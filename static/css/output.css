@@ -809,6 +809,11 @@ video {
   margin-bottom: auto;
 }
 
+.my-16 {
+  margin-top: 4rem;
+  margin-bottom: 4rem;
+}
+
 .-mt-10 {
   margin-top: -2.5rem;
 }
@@ -911,6 +916,10 @@ video {
 
 .mt-8 {
   margin-top: 2rem;
+}
+
+.mt-16 {
+  margin-top: 4rem;
 }
 
 .block {
@@ -2598,6 +2607,10 @@ input[type="number"] {
 
   .max-md\:mt-28 {
     margin-top: 7rem;
+  }
+
+  .max-md\:mt-16 {
+    margin-top: 4rem;
   }
 
   .max-md\:flex {
