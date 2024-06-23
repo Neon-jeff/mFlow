@@ -68,6 +68,7 @@ def AffiliateDetails(request):
         "sales_balance":user.profile.sales_balance,
         "affiliate_link":user.profile.affiliate_link,
         "account_type":user.profile.account_type,
+        "affiliate_balance":user.profile.affiliate_balance
     }
     return JsonResponse(data,safe=False)
 
