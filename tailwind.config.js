@@ -27,7 +27,7 @@ module.exports = {
         slide: "sliding 1s ease-in ",
       },
       colors: {
-        main: "#518B56",
+        main: "#25CAAC",
         accent: "#B8FFBE",
         primary: "#FF8600",
         dark: "#171717",

@@ -8,42 +8,47 @@
 
         <div class="flex flex-col items-start mt-5 space-y-2">
           <a
-            href="#"
+            href="{%url 'home'%}"
             class="text-white transition-colors duration-300 dark:text-gray-300 dark:hover:text-blue-400 hover:underline hover:text-blue-500"
             >Home</a
           >
           <a
-            href="#"
+            href="{%url 'affiliate'%}"
             class="text-white transition-colors duration-300 dark:text-gray-300 dark:hover:text-blue-400 hover:underline hover:text-blue-500"
-            >Who We Are</a
+            >Affiliates</a
           >
           <a
-            href="#"
+            href="{%url 'vendor'%}"
             class="text-white transition-colors duration-300 dark:text-gray-300 dark:hover:text-blue-400 hover:underline hover:text-blue-500"
-            >Our Philosophy</a
+            >Vendors</a
+          >
+          <a
+            href="{%url 'pricing'%}"
+            class="text-white transition-colors duration-300 dark:text-gray-300 dark:hover:text-blue-400 hover:underline hover:text-blue-500"
+            >Pricing</a
           >
         </div>
       </div>
 
       <div>
-        <p class="font-semibold text-white dark:text-white">Industries</p>
+        <p class="font-semibold text-white dark:text-white">Actions</p>
 
         <div class="flex flex-col items-start mt-5 space-y-2">
           <a
-            href="#"
+            href="{%url 'login'%}"
             class="text-white transition-colors duration-300 dark:text-gray-300 dark:hover:text-blue-400 hover:underline hover:text-blue-500"
-            >Retail & E-Commerce</a
+            >Login</a
           >
           <a
-            href="#"
+            href="{%url 'pricing'%}"
             class="text-white transition-colors duration-300 dark:text-gray-300 dark:hover:text-blue-400 hover:underline hover:text-blue-500"
-            >Information Technology</a
+            >Register</a
           >
-          <a
+          <!-- <a
             href="#"
             class="text-white transition-colors duration-300 dark:text-gray-300 dark:hover:text-blue-400 hover:underline hover:text-blue-500"
             >Finance & Insurance</a
-          >
+          > -->
         </div>
       </div>
     </div>
@@ -51,7 +56,9 @@
     <hr class="my-6 border-gray-200 md:my-8 dark:border-gray-700" />
 
     <div class="flex items-center justify-between">
-      <a href="#" class="font-semibold text-white text-xl"> Earn Space </a>
+      <div class="text-[#25CAAC]">
+        {% include 'components/logo/logo.html'%} Kettle well pro
+      </div>
 
       <div class="flex -mx-2">
         <a
