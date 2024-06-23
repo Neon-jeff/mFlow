@@ -48,12 +48,13 @@
         <div
           class="flex gap-5 w-fit text-xs max-md:text-xs rounded-md text-neutral-500"
         >
-          <span
-            class=" text-white p-2 gap-2 flex items-center justify-center rounded-full bg-main"
+          <button
+            class="text-white p-2 gap-2 flex items-center justify-center rounded-full bg-main"
+            @click="copy($el,promotion.promotion_link)"
           >
             <i class="ri-share-line text-white"></i>
-            Share
-          </span>
+            <span>Share</span>
+          </button>
           <butto
             class="rounded-full dark:border-gray-700 flex items-center justify-center gap-2"
           >
@@ -75,8 +76,16 @@
           this.promotions = JSON.parse(
             document.getElementById("promotions").textContent
           );
+          console.log(this.promotions);
         },
         promotions: [],
+        async copy(el, promotion_id) {
+          await navigator.clipboard.writeText(promotion_id);
+          el.children[1].textContent = "Copied";
+          setTimeout(() => {
+            el.children[1].textContent = "Share";
+          }, 2000);
+        },
       }));
     });
   </script>

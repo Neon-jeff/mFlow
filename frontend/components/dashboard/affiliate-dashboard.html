@@ -4,7 +4,7 @@
   x-show="user.account_type=='affiliate'"
   x-data="promotions"
 >
- {{promotions|json_script:'promotions'}}
+  {{promotions|json_script:'promotions'}}
   <!-- balance card -->
   <div class="flex gap-10 max-md:flex-col max-md:gap-5">
     <div class="w-full">
@@ -55,10 +55,10 @@
           </span>
           <span
             class="dark:text-lime-500 text-lg"
-            x-text="`N${user.sales_balance}.00`"
+            x-text="`$${user.sales_balance}.00`"
           ></span>
           <span class="text-xs font-semibold dark:text-gray-300 text-main"
-            >+13000 (13%)</span
+            >+0(0%)</span
           >
         </span>
 
@@ -73,9 +73,9 @@
           >
             Total Views
           </span>
-          <span class="dark:text-orange-500 text-lg">25</span>
+          <span class="dark:text-orange-500 text-lg">0</span>
           <span class="text-xs dark:text-gray-300 font-semibold text-main"
-            >+(13)</span
+            >+(0)</span
           >
         </span>
 
@@ -87,9 +87,9 @@
           >
             Total Campaigns
           </span>
-          <span class="dark:text-orange-500 text-lg">250</span>
+          <span class="dark:text-orange-500 text-lg">0</span>
           <span class="text-xs dark:text-gray-300 font-semibold text-main"
-            >+(13)</span
+            >+(0)</span
           >
         </span>
       </div>
@@ -113,6 +113,13 @@
           );
         },
         promotions: [],
+        async copy(el, promotion_id) {
+          await navigator.clipboard.writeText(promotion_id);
+          el.children[1].textContent = "Copied";
+          setTimeout(() => {
+            el.children[1].textContent = "Share";
+          }, 2000);
+        },
       }));
     });
   </script>

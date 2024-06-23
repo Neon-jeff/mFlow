@@ -26,3 +26,15 @@ class Product(models.Model):
     def __str__(self) -> str:
         return f'{self.user.first_name} {self.user.last_name} Product'
 
+
+
+class Course(models.Model):
+    title=models.CharField(max_length=200,null=True,blank=True)
+    description=models.TextField(null=True,blank=True)
+    price=models.PositiveIntegerField(default=0)
+    author=models.CharField(max_length=200,null=True,blank=True)
+    file=models.FileField(null=True,blank=True,upload_to='courses')
+    flyer=models.ImageField(null=True,blank=True,upload_to='flyers')
+
+    def __str__(self) -> str:
+        return f'{self.title}'
