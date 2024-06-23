@@ -1,4 +1,4 @@
-from django.shortcuts import render,redirect
+from django.shortcuts import render,redirect,resolve_url
 from django.contrib.auth.models import User
 from django.contrib.auth import login,logout,authenticate
 from django.contrib.auth.decorators import login_required
@@ -6,12 +6,13 @@ from django.http import HttpResponseBadRequest,JsonResponse
 from .models import *
 from .otp import CreateOtp
 import json
-from handlers.handlemails import SendOTPEmail
+from handlers.handlemails import SendOTPEmail,SendResetPasswordEmail
 from django.contrib import messages
 from .decorators import redirect_dashboard
 from uuid import uuid5,uuid4
 from django.views.decorators.csrf import csrf_exempt# Create your views here.
 from .models import AffiliateSubscriptionPayment
+from django.core.exceptions import ObjectDoesNotExist
 
 
 
@@ -90,6 +91,46 @@ def SuscriptionSucess(request):
 def Logout(request):
     logout(request)
     return redirect('login')
+
+
+def ForgotPasswordSendOtp(request):
+    if request.method=='POST':
+        try:
+            user=User.objects.get(email=request.POST['email'])
+            user.profile.email_otp=CreateOtp()
+            user.profile.save()
+            SendResetPasswordEmail(user,user.profile.email_otp)
+            messages.success(request,'Password reset otp sent')
+            return redirect(resolve_url('verify-identity') + f'?email={user.email}')
+        except ObjectDoesNotExist:
+            messages.error(request,'Account with email does not exist')
+            return render(request,'pages/forgot-password.html')
+    return render(request,'pages/forgot-password.html')
+
+def VerifyIdentity(request):
+    email=request.GET['email']
+    user=User.objects.get(email=email)
+    if request.method=='POST':
+        if request.POST['otp']==user.profile.email_otp:
+            messages.success(request,'Identity Verified,Update Your Password')
+            return redirect(resolve_url('change-password') + f'?email={user.email}')
+        else:
+            messages.error(request,'Invalid OTP')
+            return render(request,'pages/password-otp-confirm.html')
+    return render(request,'pages/password-otp-confirm.html')
+
+def ChangePassword(request):
+    user=User.objects.get(email=request.GET['email'])
+    if request.method=='POST':
+        data=request.POST
+        if data['password'] !=data['confirm']:
+            messages.error(request,"Passwords do not match")
+            return render(request,'pages/reset-password.html')
+        else:
+            user.set_password(data['password'])
+            messages.success(request,'Password Updated')
+            return redirect('login')
+    return render(request,'pages/reset-password.html')
 
 def test_uuid(request):
     user:User=request.user
