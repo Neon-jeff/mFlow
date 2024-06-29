@@ -58,7 +58,7 @@ document.addEventListener("alpine:init", async () => {
       if (imageCounter !== 4) {
         this.showBaseLoader = false;
         this.errorText =
-          "Upload 4 images to create a product, simply long long press an image on your phone to select multiple";
+          "Upload 4 images to create a product, simply long long press an image on your phone to select multiple images";
         this.showErrorLoader = true;
         return;
       }

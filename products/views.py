@@ -24,6 +24,9 @@ def PromoteProduct(request):
         {
             **model_to_dict(product),
             "product_image":product.product_image.url,
+            "product_image_2":product.product_image_2.url,
+            "product_image_3":product.product_image_3.url,
+            "product_image_4":product.product_image_4.url,
             "user":f'{product.user.first_name} {product.user.last_name}',
             "in_user_campaign":True if product.id in user_promotions_ids else False,
             "promotions":len(product.promotions.all())
