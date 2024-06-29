@@ -1458,12 +1458,12 @@ video {
   border-width: 2px;
 }
 
-.border-\[1px\] {
-  border-width: 1px;
-}
-
 .border-4 {
   border-width: 4px;
+}
+
+.border-\[1px\] {
+  border-width: 1px;
 }
 
 .border-t {
@@ -1518,11 +1518,6 @@ video {
 .border-neutral-300 {
   --tw-border-opacity: 1;
   border-color: rgb(212 212 212 / var(--tw-border-opacity));
-}
-
-.border-neutral-400 {
-  --tw-border-opacity: 1;
-  border-color: rgb(163 163 163 / var(--tw-border-opacity));
 }
 
 .border-neutral-600 {
