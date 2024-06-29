@@ -55,7 +55,11 @@ def CreateProduct(request):
             price=int(data['price']),
             product_type=data['product_type'],
             product_id=uuid5(uuid4(),user.email),
-            product_image=file['image'],
+            product_image=file['image1'],
+            product_image_2=file['image2'],
+            product_image_3=file['image3'],
+            product_image_4=file['image4'],
+            description=data['description']
         )
         messages.success(request,"Product Created")
         return JsonResponse({"status":"Successful"})

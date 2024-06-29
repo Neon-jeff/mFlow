@@ -46,6 +46,26 @@
     </span>
 
     <span
+      class="relative p-3 h-36 flex items-center gap-5 justify-between rounded-md border border-dark"
+    >
+      <!-- <input
+        type="text"
+        value=""
+        name="location"
+        class="outline-none bg-transparent"
+        placeholder="Enter Location"
+        required
+      /> -->
+      <textarea
+        name="description"
+        id=""
+        class="w-full outline-none h-full"
+        placeholder="Enter Description"
+      ></textarea>
+      <span class="text-gray-800 self-start">Description</span>
+    </span>
+
+    <span
       class="relative flex items-center justify-between p-3 rounded-md border border-dark"
     >
       <input
@@ -85,10 +105,11 @@
         name="image"
         accept=".png,.jpg,.jpeg"
         value=""
-        class="outline-none bg-transparent text-sm file:border-none file:bg-blue-500 file:rounded-md"
+        class="outline-none bg-transparent text-sm file:border-none file:p-3 file:rounded-md"
         placeholder="Product Image"
         id="#imge"
         required
+        multiple
       />
       <span class="text-gray-800">Image</span>
     </span>

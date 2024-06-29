@@ -10,6 +10,7 @@ urlpatterns=[
     path('choose/',ChooseAccount,name='choose'),
     path('test',test_uuid,name='test'),
     path('subscribe/',CreateSubscription,name='subscribe'),
+    path('subscribe-vendor/',CreateSubscriptionVendor,name='subscribe-vendor'),
     path('success/',SuscriptionSucess,name='success'),
     path('forgot-password',ForgotPasswordSendOtp,name='forgot-password'),
     path('verify-identity',VerifyIdentity,name='verify-identity'),

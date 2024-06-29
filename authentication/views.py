@@ -62,6 +62,8 @@ def ChooseAccount(request):
         account_type=request.POST['account_type']
         if account_type=='affiliate':
             request.user.profile.affiliate_link=uuid5(uuid4(),request.user.email)
+        elif account_type=='vendor':
+            request.user.profile.vendor_link=uuid5(uuid4(),request.user.email)
         request.user.profile.account_type=account_type
         request.user.profile.onboarding_complete=True
         request.user.profile.save()
@@ -82,6 +84,20 @@ def CreateSubscription(request):
         messages.success(request,'Subscription payment successful, wait for confirmation')
         return JsonResponse({"status":"success"},safe=False)
     return render(request,'pages/pay_subscription.html')
+
+@login_required(login_url='login')
+def CreateSubscriptionVendor(request):
+    if request.method=='POST':
+        image=request.FILES['image']
+        data=request.POST
+        VendorSubscriptionPayment.objects.create(
+            user=request.user,
+            subscription_type=data['bordered-radio'],
+            proof=image
+        )
+        messages.success(request,'Subscription payment successful, wait for confirmation')
+        return JsonResponse({"status":"success"},safe=False)
+    return render(request,'pages/pay_vendor_subscription.html')
 
 
 def SuscriptionSucess(request):

@@ -22,6 +22,9 @@ class Product(models.Model):
     description=models.TextField(null=True,blank=True)
     product_id=models.UUIDField(default=uuid.uuid4())
     product_image=models.ImageField(upload_to='product_images',null=True,blank=True)
+    product_image_2=models.ImageField(upload_to='product_images',null=True,blank=True)
+    product_image_3=models.ImageField(upload_to='product_images',null=True,blank=True)
+    product_image_4=models.ImageField(upload_to='product_images',null=True,blank=True)
 
     def __str__(self) -> str:
         return f'{self.user.first_name} {self.user.last_name} Product'

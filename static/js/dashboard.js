@@ -46,8 +46,16 @@ document.addEventListener("alpine:init", async () => {
       e.preventDefault();
       this.showCreateProductModal = false;
       this.showBaseLoader = true;
+      let imageCounter = 0;
       let form = new FormData(document.querySelector(".create-product"));
-      console.log(form.entries().next());
+
+      for (let [i, j] of form.entries()) {
+        if (i == "image") {
+          imageCounter++;
+          form.set(`image${imageCounter}`, j);
+        }
+      }
+      form.delete("image");
       await fetch("/products/create-product/", {
         method: "post",
         body: form,
@@ -64,7 +72,7 @@ document.addEventListener("alpine:init", async () => {
       });
     },
     async addProductToPromotion(id) {
-      this.showBaseLoader=true
+      this.showBaseLoader = true;
       let form = new FormData();
       form.set("product", id);
       let res = await fetch("/dashboard/create-promotion/", {
@@ -72,13 +80,13 @@ document.addEventListener("alpine:init", async () => {
         body: form,
       });
       if (!res.ok) {
-        this.errorText="Something went wrong,try again"
-        this.showBaseLoader=false
-        this.showErrorLoader=true
-        return
+        this.errorText = "Something went wrong,try again";
+        this.showBaseLoader = false;
+        this.showErrorLoader = true;
+        return;
       }
-      this.showBaseLoader=false
-      window.location.reload()
+      this.showBaseLoader = false;
+      window.location.reload();
     },
   }));
 });

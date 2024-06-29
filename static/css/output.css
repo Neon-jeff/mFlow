@@ -769,6 +769,11 @@ video {
   margin-bottom: 2.5rem;
 }
 
+.my-16 {
+  margin-top: 4rem;
+  margin-bottom: 4rem;
+}
+
 .my-20 {
   margin-top: 5rem;
   margin-bottom: 5rem;
@@ -807,11 +812,6 @@ video {
 .my-auto {
   margin-top: auto;
   margin-bottom: auto;
-}
-
-.my-16 {
-  margin-top: 4rem;
-  margin-bottom: 4rem;
 }
 
 .-mt-10 {
@@ -882,6 +882,10 @@ video {
   margin-top: 3rem;
 }
 
+.mt-16 {
+  margin-top: 4rem;
+}
+
 .mt-2 {
   margin-top: 0.5rem;
 }
@@ -916,10 +920,6 @@ video {
 
 .mt-8 {
   margin-top: 2rem;
-}
-
-.mt-16 {
-  margin-top: 4rem;
 }
 
 .block {
@@ -970,6 +970,10 @@ video {
   height: 3.5rem;
 }
 
+.h-16 {
+  height: 4rem;
+}
+
 .h-2 {
   height: 0.5rem;
 }
@@ -980,6 +984,10 @@ video {
 
 .h-3 {
   height: 0.75rem;
+}
+
+.h-36 {
+  height: 9rem;
 }
 
 .h-4 {
@@ -1056,6 +1064,10 @@ video {
 
 .w-14 {
   width: 3.5rem;
+}
+
+.w-16 {
+  width: 4rem;
 }
 
 .w-2 {
@@ -1300,6 +1312,10 @@ video {
   gap: 0.5rem;
 }
 
+.gap-20 {
+  gap: 5rem;
+}
+
 .gap-3 {
   gap: 0.75rem;
 }
@@ -1446,6 +1462,10 @@ video {
   border-width: 1px;
 }
 
+.border-4 {
+  border-width: 4px;
+}
+
 .border-t {
   border-top-width: 1px;
 }
@@ -1498,6 +1518,11 @@ video {
 .border-neutral-300 {
   --tw-border-opacity: 1;
   border-color: rgb(212 212 212 / var(--tw-border-opacity));
+}
+
+.border-neutral-400 {
+  --tw-border-opacity: 1;
+  border-color: rgb(163 163 163 / var(--tw-border-opacity));
 }
 
 .border-neutral-600 {
@@ -2186,6 +2211,10 @@ video {
   opacity: 1;
 }
 
+.mix-blend-multiply {
+  mix-blend-mode: multiply;
+}
+
 .shadow {
   --tw-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
   --tw-shadow-colored: 0 1px 3px 0 var(--tw-shadow-color), 0 1px 2px -1px var(--tw-shadow-color);
@@ -2412,9 +2441,8 @@ input[type="number"] {
   border-style: none;
 }
 
-.file\:bg-blue-500::file-selector-button {
-  --tw-bg-opacity: 1;
-  background-color: rgb(59 130 246 / var(--tw-bg-opacity));
+.file\:p-3::file-selector-button {
+  padding: 0.75rem;
 }
 
 .valid\:text-main:valid {
@@ -2601,16 +2629,16 @@ input[type="number"] {
     margin-top: 2.5rem;
   }
 
+  .max-md\:mt-16 {
+    margin-top: 4rem;
+  }
+
   .max-md\:mt-20 {
     margin-top: 5rem;
   }
 
   .max-md\:mt-28 {
     margin-top: 7rem;
-  }
-
-  .max-md\:mt-16 {
-    margin-top: 4rem;
   }
 
   .max-md\:flex {
@@ -2719,6 +2747,11 @@ input[type="number"] {
     overflow-x: auto;
   }
 
+  .max-md\:object-cover {
+    -o-object-fit: cover;
+       object-fit: cover;
+  }
+
   .max-md\:p-4 {
     padding: 1rem;
   }
@@ -2740,6 +2773,11 @@ input[type="number"] {
   .max-md\:py-10 {
     padding-top: 2.5rem;
     padding-bottom: 2.5rem;
+  }
+
+  .max-md\:py-24 {
+    padding-top: 6rem;
+    padding-bottom: 6rem;
   }
 
   .max-md\:pb-5 {

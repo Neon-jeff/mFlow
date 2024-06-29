@@ -127,7 +127,9 @@ document.addEventListener("alpine:init", () => {
         body: formdata,
       }).then(async (res) => {
         if (res.ok) {
-          location.assign(`${location.origin}/auth/subscribe/`);
+          if (this.account_type == "affiliate")
+            location.assign(`${location.origin}/auth/subscribe/`);
+          else location.assign(`${location.origin}/auth/subscribe-vendor/`);
         } else {
           this.showBaseLoader = false;
           this.errorText = "Connection problems, please try again";

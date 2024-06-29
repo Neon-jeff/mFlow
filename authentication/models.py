@@ -27,6 +27,7 @@ class Profile(models.Model):
     email_otp=models.CharField(null=True,blank=True,max_length=6)
     affiliate_link=models.UUIDField(unique=True,null=True,blank=True)
     onboarding_complete=models.BooleanField(default=False)
+    vendor_link=models.UUIDField(unique=True,null=True,blank=True)
 
     def __str__(self) -> str:
         return f'{self.user.first_name} {self.user.last_name} Profile'
@@ -46,12 +47,20 @@ class AffiliateSubscriptionPlan(models.Model):
         return f'{self.plan_name} Affiliate Plan'
 
 class VendorSubscriptionPayment(models.Model):
-    user=models.ForeignKey(User,on_delete=models.CASCADE,null=True,blank=True)
-    subscription_type=models.ForeignKey(VendorSubscriptionPlan,on_delete=models.PROTECT)
+    user=models.ForeignKey(User,on_delete=models.CASCADE,null=True,blank=True,related_name='vendor_subscription')
+    subscription_type=models.CharField(null=True,blank=True,max_length=100,choices=subscription_plans)
     created=models.DateField(auto_now_add=True)
-    
+    proof=models.ImageField(null=True,blank=True,upload_to='subscriptions')
+    verified=models.BooleanField(default=False)
     def __str__(self) -> str:
-        return f'{self.user.first_name} {self.user.last_name} {self.subscription_type.plan_name} Vendor Subscription'
+        return f'{self.user.first_name} {self.user.last_name} {self.subscription_type} Vendor Subscription'
+    
+    def save(self,*args, **kwargs) -> None:
+        old_instance=AffiliateSubscriptionPayment.objects.filter(id=self.id)
+        if len(old_instance) != 0:
+            if old_instance[0].verified !=self.verified and self.verified==True:
+                SendSubEmail(self.user,self.subscription_type)
+        return super(VendorSubscriptionPayment,self).save(*args, **kwargs)
 
 class AffiliateSubscriptionPayment(models.Model):
     user=models.ForeignKey(User,on_delete=models.CASCADE,null=True,blank=True,related_name='subscription')
