@@ -55,6 +55,13 @@ document.addEventListener("alpine:init", async () => {
           form.set(`image${imageCounter}`, j);
         }
       }
+      if (imageCounter !== 4) {
+        this.showBaseLoader = false;
+        this.errorText =
+          "Upload 4 images to create a product, simply long long press an image on your phone to select multiple";
+        this.showErrorLoader = true;
+        return;
+      }
       form.delete("image");
       await fetch("/products/create-product/", {
         method: "post",
