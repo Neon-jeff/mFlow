@@ -1,12 +1,12 @@
 <section
-  class="bg-[rgb(0,0,0,.8)] min-h-screen w-screen fixed top-0 flex items-center left-0 z-[1]"
+  class="bg-[rgb(0,0,0,.8)] h-full py-20 overflow-auto w-screen fixed top-0 flex items-center left-0 z-[1]"
   x-show="showCreateProductModal"
   x-cloak
 >
   <form
     enctype="multipart/form-data"
     @submit="createProduct"
-    class="bg-white w-1/3 dark:bg-neutral-900 max-md:w-3/4 flex flex-col gap-5 max-sm:w-11/12 mx-auto my-auto p-10 max-md:p-5 rounded-xl create-product"
+    class="bg-white w-1/3 dark:bg-neutral-900 overflow-auto max-md:w-3/4 flex flex-col gap-5 max-sm:w-11/12 mx-auto my-auto p-10 max-md:p-5 rounded-xl create-product"
   >
     {%csrf_token%}
     <ion-icon
@@ -46,7 +46,7 @@
     </span>
 
     <span
-      class="relative p-3 h-36 flex items-center gap-5 justify-between rounded-md border border-dark"
+      class="relative p-3 h-20 flex items-center gap-5 justify-between rounded-md border border-dark"
     >
       <!-- <input
         type="text"
